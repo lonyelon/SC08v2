@@ -1,0 +1,3 @@
+sim/target
+sim/Cargo.lock
+sim/*.bin

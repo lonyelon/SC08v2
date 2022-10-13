@@ -1,0 +1,5 @@
+	LDD.num	0x02
+	STD.ram	0x00
+	LDD.num	0x03
+	ADD.ram	0x00
+	STD.out
