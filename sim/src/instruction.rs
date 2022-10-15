@@ -42,6 +42,21 @@ pub fn ldx_num(cpu: &mut CpuStruct) {
     }
 }
 
+// Load data regstry from ROM address.
+pub fn ldd_rom(cpu: &mut CpuStruct) {
+    match cpu.ic {
+        0 => cpu.prc += 1,
+        1 => cpu.dta = cpu.rom[cpu.prc as usize],
+        2 => cpu.prc += 1,
+        3 => cpu.adr = cpu.rom[cpu.prc as usize],
+        4 => cpu.swt = true,
+        5 => {cpu.dta = cpu.rom[(cpu.dta as usize)*256+cpu.adr as usize]; cpu.prc += 1},
+        6 => cpu.swt = false,
+        7 => {cpu.ins = cpu.rom[cpu.prc as usize]; cpu.ic = 0x0f},
+        _ => {}
+    }
+}
+
 // Alu operation.
 pub fn alu(cpu: &mut CpuStruct, instruction: AluInstruction) { // ADD.ram
     match cpu.ic {
