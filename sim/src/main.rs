@@ -60,11 +60,11 @@ fn main() {
         match cpu.ins {
             // 0b0_<INS>_<SUB>
             0b00001_001 => instruction::jum(&mut cpu),
-            0b01000_001 => instruction::ldx_num(&mut cpu),
-            0b01000_010 => instruction::ldx_ram(&mut cpu),
+            0b01000_001 => instruction::ldd_num(&mut cpu),
+            0b01000_010 => instruction::ldd_ram(&mut cpu),
             0b01000_011 => instruction::ldd_rom(&mut cpu),
             0b01001_010 => instruction::std_ram(&mut cpu),
-            0b01001_111 => instruction::out(&mut cpu),
+            0b01001_111 => instruction::std_out(&mut cpu),
             0b10010_010 => instruction::alu(&mut cpu, AluInstruction::ADD),
             _ => instruction::noi(&mut cpu),
         }
