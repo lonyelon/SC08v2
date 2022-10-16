@@ -52,6 +52,20 @@ pub fn ldd_ram(cpu: &mut CpuStruct) {
     }
 }
 
+pub fn ldd_inp(cpu: &mut CpuStruct) {
+    match cpu.ic {
+        0 => cpu.prc += 1,
+        1 => {
+            let mut input = String::new();
+            std::io::stdin().read_line(&mut input).expect("Error");
+            let input: u8 = input.trim().parse().unwrap();
+            cpu.dta = input;
+        }
+        2 => {cpu.ins = cpu.rom[cpu.prc as usize]; cpu.ic = 0x0f},
+        _ => {}
+    }
+}
+
 // Load data regstry from ROM address.
 pub fn ldd_rom(cpu: &mut CpuStruct) {
     match cpu.ic {
