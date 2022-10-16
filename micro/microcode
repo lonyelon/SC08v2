@@ -1,0 +1,335 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;JUM.noa	;; Jump to ROM[AUX][RAM[ADR]]
+JUM.noa	0	PRC S
+JUM.noa	1	ROM E,INS S
+;;JUM.num	;; Jump to ROM[#1][#2]
+JUM.num	0	ROM E,AUX S
+JUM.num	1	PRC I
+JUM.num	2	ROM E,ADR S
+JUM.num	3	PRC I
+JUM.num	4	PRC S
+JUM.num	5	ROM E,ADR S
+;;JUM.ram	;; Jumps to ROM[AUX][RAM[#1]]; Same as JUM.prr
+JUM.ram	0	ROM E,ADR S
+JUM.ram	1	RAM E,ADR S,PRC I
+JUM.ram	2	PRC S
+JUM.ram	3	ROM E,INS S
+;;JUM.rom	;; ERROR: 5 byte operation
+;;JUM.ptr	;; Jumps to ROM[AUX][RAM[DTA]]
+JUM.ptr	0	RAM E,ADR S,PRC I
+JUM.ptr	1	PRC S
+JUM.ptr	2	ROM E,INS S
+;;JUM.prr	;; Jumps to ROM[AUX][RAM[#1]]; Same as JUM.ram
+JUM.prr	0	ROM E,ADR S
+JUM.prr	1	RAM E,ADR S,PRC I
+JUM.prr	2	PRC S
+JUM.prr	3	ROM E,INS S
+;;JUM.inp	;; Jumps to ROM[AUX][INP]
+JUM.inp	0	PRC S
+JUM.inp	1	ROM E,INS S
+;;JUM.out	;; ERROR: Input from output
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;LDD.noa	;; Get data from RAM[ADR] to DTA
+LDD.noa	0	ROM E,INS S
+;;LDD.num	;; Get data from ROM[#1][#2] to DTA
+LDD.num	0	ROM E,DTA S,PRC I
+LDD.num	1	ROM E,INS S
+;;LDD.ram	;; Get data from RAM[#1] to DTA
+LDD.ram	0	ROM E,ADR S
+LDD.ram	1	RAM E,DTA S,PRC I
+LDD.ram	2	ROM E,INS S
+;;LDD.rom	;; Get data from ROM[#1][#2] to DTA
+LDD.rom	0	ROM E,AUX S
+LDD.rom	1	PRC I
+LDD.rom	2	ROM E,ADR S
+LDD.rom	3	SWT
+LDD.rom	4	ROM E,DTA S,PRC I
+LDD.rom	5	SWT
+LDD.rom	6	ROM E,INS S
+;;LDD.ptr	;; Get data from RAM[DTA] to DTA
+LDD.ptr	0	RAM E,DTA S,PRC I
+LDD.ptr	1	ROM E,INS S
+;;LDD.prr	;; Get data from RAM[#1] to DTA
+LDD.prr	0	ROM E,ADR S
+LDD.prr	1	RAM E,ADR S
+LDD.prr	2	RAM E,DTA S,PRC I
+LDD.prr	3	ROM E,INS S
+;;LDD.inp	;; Get data from INP to DTA
+LDD.inp	0	ROM E,INS S
+;;LDD.out	;; ERROR: Input from output
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;STD.noa	;; Store DTA to RAM[ADR]
+STD.noa	0	ROM E,INS S
+;;STD.num	;; ERROR: Makes no sense?
+;;STD.ram	;; Store DTA to RAM[#1]
+STD.ram	0	ROM E,ADR S
+STD.ram	1	ALU E,RAM S,PRC I
+STD.ram	2	ROM E,INS S
+;;STD.rom	;; Get data from DTA and store it in ROM[#1][#2]
+STD.rom	0	ROM E,AUX S
+STD.rom	1	PRC I
+STD.rom	2	ROM E,ADR S
+STD.rom	3	SWT
+STD.rom	4	ALU E,ROM S
+STD.rom	5	PRC I,SWT
+STD.rom	6	ROM E,INS S
+;;STD.ptr	;; Store DTA to RAM[DTA]
+STD.ptr	0	ALU E,RAM S,PRC I
+STD.ptr	1	ROM E,INS S
+;;STD.prr	;; Store DTA to RAM[#1]
+STD.prr	0	ROM E,ADR S
+STD.prr	1	RAM E,ADR S
+STD.prr	2	ALU E,RAM S,PRC I
+STD.prr	3	ROM E,INS S
+;;STD.inp	;;Makes no sense
+;;STD.out	;; Stores DTA in OUT
+STD.out	0	ROM E,INS S
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;LDA.noa	;; Get data from RAM[ADR] to AUX
+LDA.noa	0	ROM E,INS S
+;;LDA.num	;; Get data from ROM[#1][#2] to AUX
+LDA.num	0	ROM E,AUX S,PRC I
+LDA.num	1	ROM E,INS S
+;;LDA.ram	;; Get data from RAM[#1] to AUX
+LDA.ram	0	ROM E,ADR S
+LDA.ram	1	RAM E,AUX S,PRC I
+LDA.ram	2	ROM E,INS S
+;;LDA.rom	;; Get data from ROM[#1][#2] to AUX
+LDA.rom	0	ROM E,AUX S
+LDA.rom	1	PRC I
+LDA.rom	2	ROM E,ADR S
+LDA.rom	3	SWT
+LDA.rom	4	ROM E,AUX S,PRC I
+LDA.rom	5	SWT
+LDA.rom	6	ROM E,INS S
+;;LDA.ptr	;; Get data from RAM[AUX] to DTA
+LDA.ptr	0	RAM E,AUX S,PRC I
+LDA.ptr	1	ROM E,INS S
+;;LDA.prr	;; Get data from RAM[#1] to AUX
+LDA.prr	0	ROM E,ADR S
+LDA.prr	1	RAM E,ADR S
+LDA.prr	2	RAM E,AUX S,PRC I
+LDA.prr	3	ROM E,INS S
+;;LDA.inp	;; Get data from INP to AUX
+LDA.inp	0	ROM E,INS S
+;;LDA.out	;; ERROR: Input from output
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;STA.noa	;; Store AUX to RAM[ADR]
+STA.noa	0	ROM E,INS S
+;;STA.num	;; ERROR: Makes no sense?
+STA.ram	0	PRC I
+STA.ram	1	ROM E,ADR S
+STA.ram	2	ALU E,RAM S,PRC I
+STA.ram	3	ROM E,INS S
+;;STA.rom	;; Get data from AUX and store it in ROM[#1][#2]
+STA.rom	0	ROM E,AUX S
+STA.rom	1	PRC I
+STA.rom	2	ROM E,ADR S
+STA.rom	3	SWT
+STA.rom	4	ALU E,ROM S
+STA.rom	5	PRC I,SWT
+STA.rom	6	ROM E,INS S
+;;STA.ptr	;; Store AUX to RAM[DTA]
+STA.ptr	0	ALU E,RAM S,PRC I
+STA.ptr	1	ROM E,INS S
+;;STA.prr	;; ERROR: Makes no sense
+;;STA.inp	;;Makes no sense
+;;STA.out	;; Stores AUX in OUT
+STA.out	0	ROM E,INS S
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;ADD.noa	;; Add RAM[ADR] to DTA
+ADD.noa	0	ALU E,DTA S,PRC I
+ADD.noa	1	ROM E,INS S
+;;ADD.num	;; Add ROM to DTA
+ADD.num	0	ROM E,AUX S
+ADD.num	1	ALU E,DTA S,PRC I
+ADD.num	2	ROM E,INS S
+;;ADD.ram	;; Add RAM[#1] to DTA
+ADD.ram	0	ROM E,ADR S
+ADD.ram	1	RAM E,AUX S
+ADD.ram	2	ALU E,DTA S,PRC I
+ADD.ram	3	ROM E,INS S
+;;ADD.rom	;; ERROR: Too many steps
+;;ADD.ptr	;; Add RAM[RAM[DTA]] to DTA
+ADD.ptr	0	RAM E,ADR S
+ADD.ptr	1	RAM E,AUX S
+ADD.ptr	2	ALU E,DTA S,PRC I
+ADD.ptr	3	ROM E,PRC S
+;;ADD.prr	;; Add RAM[RAM[#1]] to DTA
+ADD.prr	0	ROM E,ADR S
+ADD.prr	1	RAM E,ADR S
+ADD.prr	2	RAM E,AUX S
+ADD.prr	3	ALU E,DTA S,PRC I
+ADD.prr	4	ROM E,PRC S
+;;ADD.inp	;; Add INP to DTA
+ADD.inp	0	ALU E,DTA S,PRC I
+ADD.inp	1	ROM E,PRC S
+;;ADD.out	;; ERROR: Input from output
+;;SUB.noa	;; Add RAM[ADR] to DTA
+SUB.noa	0	ALU E,DTA S,PRC I
+SUB.noa	1	ROM E,INS S
+;;SUB.num	;; Add ROM to DTA
+SUB.num	0	ROM E,AUX S
+SUB.num	1	ALU E,DTA S,PRC I
+SUB.num	2	ROM E,INS S
+;;SUB.ram	;; Add RAM[#1] to DTA
+SUB.ram	0	ROM E,ADR S
+SUB.ram	1	RAM E,AUX S
+SUB.ram	2	ALU E,DTA S,PRC I
+SUB.ram	3	ROM E,INS S
+;;SUB.rom	;; ERROR: Too many steps
+;;SUB.ptr	;; Add RAM[RAM[DTA]] to DTA
+SUB.ptr	0	RAM E,ADR S
+SUB.ptr	1	RAM E,AUX S
+SUB.ptr	2	ALU E,DTA S,PRC I
+SUB.ptr	3	ROM E,PRC S
+;;SUB.prr	;; Add RAM[RAM[#1]] to DTA
+SUB.prr	0	ROM E,ADR S
+SUB.prr	1	RAM E,ADR S
+SUB.prr	2	RAM E,AUX S
+SUB.prr	3	ALU E,DTA S,PRC I
+SUB.prr	4	ROM E,PRC S
+;;SUB.inp	;; Add INP to DTA
+SUB.inp	0	ALU E,DTA S,PRC I
+SUB.inp	1	ROM E,PRC S
+;;SUB.out	;; ERROR: Input from output
+;;NAN.noa	;; Add RAM[ADR] to DTA
+NAN.noa	0	ALU E,DTA S,PRC I
+NAN.noa	1	ROM E,INS S
+;;NAN.num	;; Add ROM to DTA
+NAN.num	0	ROM E,AUX S
+NAN.num	1	ALU E,DTA S,PRC I
+NAN.num	2	ROM E,INS S
+;;NAN.ram	;; Add RAM[#1] to DTA
+NAN.ram	0	ROM E,ADR S
+NAN.ram	1	RAM E,AUX S
+NAN.ram	2	ALU E,DTA S,PRC I
+NAN.ram	3	ROM E,INS S
+;;NAN.rom	;; ERROR: Too many steps
+;;NAN.ptr	;; Add RAM[RAM[DTA]] to DTA
+NAN.ptr	0	RAM E,ADR S
+NAN.ptr	1	RAM E,AUX S
+NAN.ptr	2	ALU E,DTA S,PRC I
+NAN.ptr	3	ROM E,PRC S
+;;NAN.prr	;; Add RAM[RAM[#1]] to DTA
+NAN.prr	0	ROM E,ADR S
+NAN.prr	1	RAM E,ADR S
+NAN.prr	2	RAM E,AUX S
+NAN.prr	3	ALU E,DTA S,PRC I
+NAN.prr	4	ROM E,PRC S
+;;NAN.inp	;; Add INP to DTA
+NAN.inp	0	ALU E,DTA S,PRC I
+NAN.inp	1	ROM E,PRC S
+;;NAN.out	;; ERROR: Input from output
+;;SHL.noa	;; Add RAM[ADR] to DTA
+SHL.noa	0	ALU E,DTA S,PRC I
+SHL.noa	1	ROM E,INS S
+;;SHL.num	;; Add ROM to DTA
+SHL.num	0	ROM E,AUX S
+SHL.num	1	ALU E,DTA S,PRC I
+SHL.num	2	ROM E,INS S
+;;SHL.ram	;; Add RAM[#1] to DTA
+SHL.ram	0	ROM E,ADR S
+SHL.ram	1	RAM E,AUX S
+SHL.ram	2	ALU E,DTA S,PRC I
+SHL.ram	3	ROM E,INS S
+;;SHL.rom	;; ERROR: Too many steps
+;;SHL.ptr	;; Add RAM[RAM[DTA]] to DTA
+SHL.ptr	0	RAM E,ADR S
+SHL.ptr	1	RAM E,AUX S
+SHL.ptr	2	ALU E,DTA S,PRC I
+SHL.ptr	3	ROM E,PRC S
+;;SHL.prr	;; Add RAM[RAM[#1]] to DTA
+SHL.prr	0	ROM E,ADR S
+SHL.prr	1	RAM E,ADR S
+SHL.prr	2	RAM E,AUX S
+SHL.prr	3	ALU E,DTA S,PRC I
+SHL.prr	4	ROM E,PRC S
+;;SHL.inp	;; Add INP to DTA
+SHL.inp	0	ALU E,DTA S,PRC I
+SHL.inp	1	ROM E,PRC S
+;;SHL.out	;; ERROR: Input from output
+;;SHR.noa	;; Add RAM[ADR] to DTA
+SHR.noa	0	ALU E,DTA S,PRC I
+SHR.noa	1	ROM E,INS S
+;;SHR.num	;; Add ROM to DTA
+SHR.num	0	ROM E,AUX S
+SHR.num	1	ALU E,DTA S,PRC I
+SHR.num	2	ROM E,INS S
+;;SHR.ram	;; Add RAM[#1] to DTA
+SHR.ram	0	ROM E,ADR S
+SHR.ram	1	RAM E,AUX S
+SHR.ram	2	ALU E,DTA S,PRC I
+SHR.ram	3	ROM E,INS S
+;;SHR.rom	;; ERROR: Too many steps
+;;SHR.ptr	;; Add RAM[RAM[DTA]] to DTA
+SHR.ptr	0	RAM E,ADR S
+SHR.ptr	1	RAM E,AUX S
+SHR.ptr	2	ALU E,DTA S,PRC I
+SHR.ptr	3	ROM E,PRC S
+;;SHR.prr	;; Add RAM[RAM[#1]] to DTA
+SHR.prr	0	ROM E,ADR S
+SHR.prr	1	RAM E,ADR S
+SHR.prr	2	RAM E,AUX S
+SHR.prr	3	ALU E,DTA S,PRC I
+SHR.prr	4	ROM E,PRC S
+;;SHR.inp	;; Add INP to DTA
+SHR.inp	0	ALU E,DTA S,PRC I
+SHR.inp	1	ROM E,PRC S
+;;SHR.out	;; ERROR: Input from output
+;;EQU.noa	;; Add RAM[ADR] to DTA
+EQU.noa	0	ALU E,DTA S,PRC I
+EQU.noa	1	ROM E,INS S
+;;EQU.num	;; Add ROM to DTA
+EQU.num	0	ROM E,AUX S
+EQU.num	1	ALU E,DTA S,PRC I
+EQU.num	2	ROM E,INS S
+;;EQU.ram	;; Add RAM[#1] to DTA
+EQU.ram	0	ROM E,ADR S
+EQU.ram	1	RAM E,AUX S
+EQU.ram	2	ALU E,DTA S,PRC I
+EQU.ram	3	ROM E,INS S
+;;EQU.rom	;; ERROR: Too many steps
+;;EQU.ptr	;; Add RAM[RAM[DTA]] to DTA
+EQU.ptr	0	RAM E,ADR S
+EQU.ptr	1	RAM E,AUX S
+EQU.ptr	2	ALU E,DTA S,PRC I
+EQU.ptr	3	ROM E,PRC S
+;;EQU.prr	;; Add RAM[RAM[#1]] to DTA
+EQU.prr	0	ROM E,ADR S
+EQU.prr	1	RAM E,ADR S
+EQU.prr	2	RAM E,AUX S
+EQU.prr	3	ALU E,DTA S,PRC I
+EQU.prr	4	ROM E,PRC S
+;;EQU.inp	;; Add INP to DTA
+EQU.inp	0	ALU E,DTA S,PRC I
+EQU.inp	1	ROM E,PRC S
+;;EQU.out	;; ERROR: Input from output
+;;GRE.noa	;; Add RAM[ADR] to DTA
+GRE.noa	0	ALU E,DTA S,PRC I
+GRE.noa	1	ROM E,INS S
+;;GRE.num	;; Add ROM to DTA
+GRE.num	0	ROM E,AUX S
+GRE.num	1	ALU E,DTA S,PRC I
+GRE.num	2	ROM E,INS S
+;;GRE.ram	;; Add RAM[#1] to DTA
+GRE.ram	0	ROM E,ADR S
+GRE.ram	1	RAM E,AUX S
+GRE.ram	2	ALU E,DTA S,PRC I
+GRE.ram	3	ROM E,INS S
+;;GRE.rom	;; ERROR: Too many steps
+;;GRE.ptr	;; Add RAM[RAM[DTA]] to DTA
+GRE.ptr	0	RAM E,ADR S
+GRE.ptr	1	RAM E,AUX S
+GRE.ptr	2	ALU E,DTA S,PRC I
+GRE.ptr	3	ROM E,PRC S
+;;GRE.prr	;; Add RAM[RAM[#1]] to DTA
+GRE.prr	0	ROM E,ADR S
+GRE.prr	1	RAM E,ADR S
+GRE.prr	2	RAM E,AUX S
+GRE.prr	3	ALU E,DTA S,PRC I
+GRE.prr	4	ROM E,PRC S
+;;GRE.inp	;; Add INP to DTA
+GRE.inp	0	ALU E,DTA S,PRC I
+GRE.inp	1	ROM E,PRC S
+;;GRE.out	;; ERROR: Input from output
