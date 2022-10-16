@@ -91,24 +91,36 @@ pub fn std_out(cpu: &mut CpuStruct) {
     }
 }
 
+fn alu_perform_operation(cpu: &mut CpuStruct, instruction: AluInstruction) {
+    match instruction {
+        AluInstruction::ADD => cpu.dta += cpu.aux,
+        AluInstruction::SUB => cpu.dta -= cpu.aux,
+        AluInstruction::NAN => cpu.dta = !(cpu.dta & cpu.aux),
+        AluInstruction::SHL => cpu.dta <<= 1,
+        AluInstruction::SHR => cpu.dta >>= 1,
+        AluInstruction::GRE => cpu.dta = if cpu.dta > cpu.aux { 0xff } else { 0x00 },
+        AluInstruction::EQU => cpu.dta = if cpu.dta == cpu.aux { 0xff } else { 0x00 },
+    };
+}
+
+// Alu operation from a variable in rom.
+pub fn alu_num(cpu: &mut CpuStruct, instruction: AluInstruction) {
+    match cpu.ic {
+        0 => cpu.prc += 1,
+        1 => cpu.aux = cpu.rom[cpu.prc as usize],
+        2 => {alu_perform_operation(cpu, instruction); cpu.prc += 1}
+        3 => {cpu.ins = cpu.rom[cpu.prc as usize]; cpu.ic = 0x0f}
+        _ => {}
+    }
+}
+
 // Alu operation.
-pub fn alu(cpu: &mut CpuStruct, instruction: AluInstruction) { // ADD.ram
+pub fn alu_ram(cpu: &mut CpuStruct, instruction: AluInstruction) {
     match cpu.ic {
         0 => cpu.prc += 1,
         1 => cpu.adr = cpu.rom[cpu.prc as usize],
         2 => cpu.aux = cpu.ram[cpu.adr as usize],
-        3 => {
-            match instruction {
-                AluInstruction::ADD => cpu.dta += cpu.aux,
-                AluInstruction::SUB => cpu.dta -= cpu.aux,
-                AluInstruction::NAN => cpu.dta = !(cpu.dta & cpu.aux),
-                AluInstruction::SHL => cpu.dta <<= 1,
-                AluInstruction::SHR => cpu.dta >>= 1,
-                AluInstruction::GRE => cpu.dta = if cpu.dta > cpu.aux { 0xff } else { 0x00 },
-                AluInstruction::EQU => cpu.dta = if cpu.dta == cpu.aux { 0xff } else { 0x00 },
-            };
-            cpu.prc += 1;
-        }
+        3 => {alu_perform_operation(cpu, instruction); cpu.prc += 1}
         4 => {cpu.ins = cpu.rom[cpu.prc as usize]; cpu.ic = 0x0f}
         _ => {}
     }
