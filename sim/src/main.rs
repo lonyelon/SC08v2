@@ -41,7 +41,13 @@ fn main() {
             0b01000_011 => "LDD.rom",
             0b01001_010 => "STD.ram",
             0b01001_111 => "STD.out",
-            0b10010_010 => "ADD.ram",
+            0b10000_010 => "ADD.ram",
+            0b10001_010 => "SUB.ram",
+            0b10010_010 => "NAN.ram",
+            0b10100_010 => "SHL.ram",
+            0b10101_010 => "SHR.ram",
+            0b10110_010 => "EQU.ram",
+            0b10111_010 => "GRE.ram",
             _ => "ERR",
         });
         println!("  state:");
@@ -53,19 +59,25 @@ fn main() {
         println!("    adr: {:#04x}", cpu.adr);
         println!("  step: {}", step);
 
-        if step == 380 {
+        if step == 2000 {
             break;
         }
 
         match cpu.ins {
             // 0b0_<INS>_<SUB>
-            0b00001_001 => instruction::jum(&mut cpu),
+            0b00001_001 => instruction::jum_num(&mut cpu),
             0b01000_001 => instruction::ldd_num(&mut cpu),
             0b01000_010 => instruction::ldd_ram(&mut cpu),
             0b01000_011 => instruction::ldd_rom(&mut cpu),
             0b01001_010 => instruction::std_ram(&mut cpu),
             0b01001_111 => instruction::std_out(&mut cpu),
-            0b10010_010 => instruction::alu(&mut cpu, AluInstruction::ADD),
+            0b10000_010 => instruction::alu(&mut cpu, AluInstruction::ADD),
+            0b10001_010 => instruction::alu(&mut cpu, AluInstruction::SUB),
+            0b10010_010 => instruction::alu(&mut cpu, AluInstruction::NAN),
+            0b10100_010 => instruction::alu(&mut cpu, AluInstruction::SHL),
+            0b10101_010 => instruction::alu(&mut cpu, AluInstruction::SHR),
+            0b10110_010 => instruction::alu(&mut cpu, AluInstruction::EQU),
+            0b10111_010 => instruction::alu(&mut cpu, AluInstruction::GRE),
             _ => instruction::noi(&mut cpu),
         }
 

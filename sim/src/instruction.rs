@@ -1,6 +1,6 @@
 use super::cpu::*;
 
-fn getRom(cpu: &mut CpuStruct) -> u8 {
+fn get_rom(cpu: &mut CpuStruct) -> u8 {
     if cpu.swt {
         return cpu.rom[(cpu.dta as usize)*256+cpu.adr as usize];
     }
@@ -17,7 +17,7 @@ pub fn noi(cpu: &mut CpuStruct) {
 }
 
 // Jump instruction.
-pub fn jum(cpu: &mut CpuStruct) {
+pub fn jum_num(cpu: &mut CpuStruct) {
     match cpu.ic {
         0 => cpu.prc += 1,
         1 => cpu.aux = cpu.rom[cpu.prc as usize],
@@ -61,7 +61,7 @@ pub fn ldd_rom(cpu: &mut CpuStruct) {
         3 => cpu.adr = cpu.rom[cpu.prc as usize],
         4 => cpu.swt = true,
         5 => {
-            cpu.dta = getRom(cpu);
+            cpu.dta = get_rom(cpu);
             cpu.prc += 1
         },
         6 => cpu.swt = false,
@@ -99,13 +99,13 @@ pub fn alu(cpu: &mut CpuStruct, instruction: AluInstruction) { // ADD.ram
         2 => cpu.aux = cpu.ram[cpu.adr as usize],
         3 => {
             match instruction {
-                AluInstruction::NOO => {}
                 AluInstruction::ADD => cpu.dta += cpu.aux,
                 AluInstruction::SUB => cpu.dta -= cpu.aux,
-                AluInstruction::EQU => cpu.dta = !(cpu.dta^cpu.aux), // A == B => !(A XOR B)
-                AluInstruction::GRE => cpu.dta = if cpu.dta > cpu.aux { 0xff } else { 0x00 },
+                AluInstruction::NAN => cpu.dta = !(cpu.dta & cpu.aux),
                 AluInstruction::SHL => cpu.dta <<= 1,
                 AluInstruction::SHR => cpu.dta >>= 1,
+                AluInstruction::GRE => cpu.dta = if cpu.dta > cpu.aux { 0xff } else { 0x00 },
+                AluInstruction::EQU => cpu.dta = if cpu.dta == cpu.aux { 0xff } else { 0x00 },
             };
             cpu.prc += 1;
         }

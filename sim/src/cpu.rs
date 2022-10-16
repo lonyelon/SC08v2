@@ -11,11 +11,11 @@ pub struct CpuStruct {
 }
 
 pub enum AluInstruction {
-    NOO,
     ADD,
     SUB,
+    NAN,
+    SHL,
+    SHR,
     EQU,
     GRE,
-    SHL,
-    SHR
 }

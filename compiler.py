@@ -78,19 +78,19 @@ def assemble(code):
                 case "STA":
                     insByte = 0b01011000
                 case "ADD":
-                    insByte = 0b10010000
+                    insByte = 0b10000000
                 case "SUB":
-                    insByte = 0b10011000
+                    insByte = 0b10001000
                 case "NAN":
-                    insByte = 0b10100000
+                    insByte = 0b10010000
                 case "SHL":
-                    insByte = 0b10110000
+                    insByte = 0b10100000
                 case "SHR":
-                    insByte = 0b10110000
+                    insByte = 0b10101000
                 case "EQU":
-                    insByte = 0b11000000
+                    insByte = 0b10110000
                 case "GRE":
-                    insByte = 0b11001000
+                    insByte = 0b10111000
                 #case _:
                 #    exit(2)
             match step[1].split(".")[1]:
