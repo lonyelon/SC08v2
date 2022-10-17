@@ -4,8 +4,6 @@ The SSC08v2 is a super-simple, open-hardware 8bit computer built for retro hardw
 
 This repository contains various directories and files that help design, build and test both the computer's hardware and it's software. Those files and directories are the following:
 
-<img src="doc/arch.svg"></img>
-
 | File/Dir | Explanation |
 | --- | --- |
 | **compiler.py** | converts assembly code to binary data. |
@@ -13,6 +11,14 @@ This repository contains various directories and files that help design, build a
 | **sim/**        | a complete simulator to test software in. |
 | **asm/**        | software to be built for the CPU. |
 | **asm/so**      | Complete OS. |
+
+## Running software in the CPU
+
+To run software in the *simulated* CPU one has two follow two steps: compilation and execution. Let's run one of the test programs for example:
+1. Compile the program by running the compiler: `python3 ./comp/compiler.py ./asm/test-programs/mult.asm`. This will result in a file named `result.bin` being created, which can be either flashed into the CPU's ROM or executed by the simulator. Note that the file has a size of exactly 64KB.
+2. Run the simulator by entering the `sim` directory and then executing `cargo run ../result.bin | grep -E '^[0-9]+'`. In this case, enter a number (smaller than 255) and press enter. Repeat that step and the product of both will be outputted.
+
+This shows that the simulator needs machine code and can not work with assembly code, since it is a one-to-one digital recreation of the real CPU.
 
 ## Contributing
 
