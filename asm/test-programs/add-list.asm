@@ -13,7 +13,7 @@
 ;; Ask the user for the numbers and store them in RAM. Only stop once the user
 ;; gives a zero.
 ASK_LOOP	LDD.inp
-	STD.ptr	pointer
+	STD.prr	pointer
 	EQU.num	0
 	JUM.num	:SHOW
 	LDD.ram	pointer
@@ -23,7 +23,7 @@ ASK_LOOP	LDD.inp
 	JUM.num	:ASK_LOOP
 
 ;; Go back in the list adding the numbers up.
-SHOW	LDD.ptr	pointer
+SHOW	LDD.prr	pointer
 	ADD.ram	result
 	STD.ram	result
 	LDD.ram	pointer
