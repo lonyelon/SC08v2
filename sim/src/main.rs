@@ -68,7 +68,7 @@ fn main() {
         println!("    adr: {:#04x}", cpu.adr);
         println!("  step: {}", step);
 
-        if step == 2000 {
+        if step == 10000 {
             break;
         }
 

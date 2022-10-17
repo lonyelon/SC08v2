@@ -2,7 +2,8 @@
 #var	second	0x01
 #var	buffer	0x02
 #var	counter	0x03
-#var	result	0x04
+#var	result0	0x04
+#var	result1	0x05
 
 ;;  Get both numbers from the user.
 	LDD.inp
@@ -28,13 +29,22 @@ START	LDD.ram	counter
 	STD.ram	counter
 	GRE.ram	first
 	JUM.num	:END
-	LDD.ram	result
+	LDD.ram	result0
 	ADD.ram	second
-	STD.ram	result
+	STD.ram	buffer
+	GRE.ram	result0
+	JUM.num	:STORE
+	LDD.ram	result1
+	ADD.num	0x01
+	STD.ram	result1
+STORE	LDD.ram	buffer
+	STD.ram	result0
 	JUM.num	:START
 
 ;; Print result.
-END	LDD.ram	result
+END	LDD.ram	result0
+	STD.out
+	LDD.ram	result1
 	STD.out
 
 ;; Halt.
