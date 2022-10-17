@@ -108,6 +108,8 @@ def assemble(code):
                     insByte |= 0b011
                 case "ptr":
                     insByte |= 0b100
+                case "prr":
+                    insByte |= 0b101
                 case "inp":
                     insByte |= 0b110
                 case "out":
