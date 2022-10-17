@@ -54,6 +54,16 @@ pub fn ldd_ram(cpu: &mut CpuStruct) {
 }
 
 // Load data registry.
+pub fn ldd_ptr(cpu: &mut CpuStruct) {
+    match cpu.ic.0 {
+        0 => cpu.adr = cpu.dta,
+        1 => {cpu.dta = cpu.ram[cpu.adr.0 as usize]; cpu.prc += 1},
+        2 => {cpu.ins = cpu.rom[cpu.prc.0 as usize]; cpu.ic = Wrapping(0x0f)},
+        _ => {}
+    }
+}
+
+// Load data registry.
 pub fn ldd_prr(cpu: &mut CpuStruct) {
     match cpu.ic.0 {
         0 => cpu.prc += 1,
@@ -104,6 +114,16 @@ pub fn std_ram(cpu: &mut CpuStruct) {
         1 => cpu.adr = cpu.rom[cpu.prc.0 as usize],
         2 => {cpu.ram[cpu.adr.0 as usize] = cpu.dta; cpu.prc += 1}
         3 => {cpu.ins = cpu.rom[cpu.prc.0 as usize]; cpu.ic = Wrapping(0x0f) },
+        _ => {}
+    }
+}
+
+// Store data to RAM.
+pub fn std_ptr(cpu: &mut CpuStruct) {
+    match cpu.ic.0 {
+        0 => cpu.adr = cpu.dta,
+        1 => {cpu.ram[cpu.adr.0 as usize] = cpu.dta; cpu.prc += 1}
+        2 => {cpu.ins = cpu.rom[cpu.prc.0 as usize]; cpu.ic = Wrapping(0x0f) },
         _ => {}
     }
 }
