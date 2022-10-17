@@ -1,4 +1,5 @@
 use std::env;
+use std::num::Wrapping;
 mod cpu;
 mod instruction;
 
@@ -11,29 +12,29 @@ fn main() {
     }
 
     let mut cpu = CpuStruct {
-        dta: 0,
-        aux: 0,
-        ins: 0,
-        prc: 0,
-        adr: 0,
-        ic: 0,
+        dta: Wrapping(0),
+        aux: Wrapping(0),
+        ins: Wrapping(0),
+        prc: Wrapping(0),
+        adr: Wrapping(0),
+        ic: Wrapping(0),
         swt: false,
-        ram: [0; 256],
-        rom: [0; 65536]
+        ram: [Wrapping(0); 256],
+        rom: [Wrapping(0); 65536]
     };
 
     // Read program from ROM memory.
     let bytes = std::fs::read(&args[1]).expect("Error while reading ROM file");
     let mut i = 0;
     for b in bytes {
-        cpu.rom[i] = b;
+        cpu.rom[i] = Wrapping(b);
         i += 1;
     }
 
     println!("steps:");
     let mut step = 0;
     loop {
-        println!("- instruction: {}", match cpu.ins {
+        println!("- instruction: {}", match cpu.ins.0 {
             0b00000_000 => "NOI.noa",
             0b00001_001 => "JUM.num",
             0b01000_001 => "LDD.num",
@@ -71,7 +72,7 @@ fn main() {
             break;
         }
 
-        match cpu.ins {
+        match cpu.ins.0 {
             // 0b0_<INS>_<SUB>
             0b00001_001 => instruction::jum_num(&mut cpu),
             0b01000_001 => instruction::ldd_num(&mut cpu),
@@ -98,8 +99,8 @@ fn main() {
         }
 
         cpu.ic += 0x1;
-        if cpu.ic == 0x10 {
-            cpu.ic = 0x00;
+        if cpu.ic.0 == 0x10 {
+            cpu.ic = Wrapping(0x00);
         }
 
         step += 1;
