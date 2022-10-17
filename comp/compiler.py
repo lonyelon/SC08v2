@@ -63,6 +63,10 @@ def assemble(code):
             value = int(step[1], base = 16)
             value = "{0:08b}".format(value)
             code[i][1] = value;
+        if re.match("^[0-9]", step[1]):
+            value = int(step[1])
+            value = "{0:08b}".format(value)
+            code[i][1] = value;
         else:
             match step[1].split(".")[0]:
                 case "NOI":
@@ -120,12 +124,20 @@ def assemble(code):
                 value = "{0:016b}".format(value)
                 code[i][2] = value[:len(value)//2]
                 code[i].append(value[len(value)//2:])
-            elif re.match("^:[A-Za-z][A-Za-z\-_]*", step[2]):
+            elif re.match("^[0-9]+$", step[2]):
+                value = int(step[2])
+                if value > 255:
+                    sys.exit("Decimal number too large (>255).")
+                value = "{0:08b}".format(value)
+                code[i][2] = value
+            elif re.match("^:[A-Za-z][A-Za-z\-_]*$", step[2]):
                 code[i].append("")
-            elif re.match("^[A-Za-z]+", step[2]):
+            elif re.match("^[A-Za-z]+$", step[2]):
                 value = int(defines[step[2]], base = 16)
                 value = "{0:08b}".format(value)
                 code[i][2] = value;
+            else:
+                sys.exit("Unrecognized format for value")
         code[i] = step[1:]
     return code
 
