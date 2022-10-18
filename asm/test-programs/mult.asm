@@ -39,6 +39,7 @@ START	LDD.ram	counter
 	STD.ram	result1
 STORE	LDD.ram	buffer
 	STD.ram	result0
+	LDD.num	0xff
 	JUM.num	:START
 
 ;; Print result.
