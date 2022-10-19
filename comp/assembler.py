@@ -153,13 +153,13 @@ def countTo(pos, code):
 
 def positionReplace(code, positions):
     for i,line in enumerate(code):
-        if len(line) == 3 and re.match("^:[A-Za-z][A-Za-z\-_]*$", line[1]):
+        if len(line) == 3 and re.match("^:[A-Za-z][A-Za-z0-9\-_]*$", line[1]):
             ref = positions[line[1].replace(":", "")]
             ref = countTo(ref, code)
             ref = "{0:016b}".format(ref)
             code[i][1] = ref[:len(ref)//2]
             code[i][2] = ref[len(ref)//2:]
-        elif len(line) == 2 and re.match("^:[A-Za-z][A-Za-z\-_]*(\[[01]\])?$", line[1]):
+        elif len(line) == 2 and re.match("^:[A-Za-z][A-Za-z0-9\-_]*(\[[01]\])?$", line[1]):
             ref = positions[line[1].replace(":", "").split("[")[0]]
             ref = countTo(ref, code)
             ref = "{0:016b}".format(ref)
