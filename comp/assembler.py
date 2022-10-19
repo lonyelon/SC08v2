@@ -134,6 +134,8 @@ def assemble(code):
                 code[i][2] = value
             elif re.match("^:[A-Za-z][A-Za-z0-9_]*$", step[2]):
                 code[i].append("")
+            elif re.match("^:[A-Za-z][A-Za-z0-9_]*\[[01]\]$", step[2]):
+                pass
             elif re.match("^[A-Za-z][A-Za-z0-9_]+$", step[2]):
                 value = int(defines[step[2]], base = 16)
                 value = "{0:08b}".format(value)
@@ -151,13 +153,21 @@ def countTo(pos, code):
 
 def positionReplace(code, positions):
     for i,line in enumerate(code):
-        if len(line) == 3:
-            if re.match("^:[A-Za-z][A-Za-z\-_]*", line[1]):
-                ref = positions[line[1].replace(":", "")]
-                ref = countTo(ref, code)
-                ref = "{0:016b}".format(ref)
+        if len(line) == 3 and re.match("^:[A-Za-z][A-Za-z\-_]*$", line[1]):
+            ref = positions[line[1].replace(":", "")]
+            ref = countTo(ref, code)
+            ref = "{0:016b}".format(ref)
+            code[i][1] = ref[:len(ref)//2]
+            code[i][2] = ref[len(ref)//2:]
+        elif len(line) == 2 and re.match("^:[A-Za-z][A-Za-z\-_]*(\[[01]\])?$", line[1]):
+            ref = positions[line[1].replace(":", "").split("[")[0]]
+            ref = countTo(ref, code)
+            ref = "{0:016b}".format(ref)
+            if line[1].split("[")[1].split("]")[0] == "1":
                 code[i][1] = ref[:len(ref)//2]
-                code[i][2] = ref[len(ref)//2:]
+            else:
+                code[i][1] = ref[len(ref)//2:]
+
     return code
 
 def codeToBin(code, path):
