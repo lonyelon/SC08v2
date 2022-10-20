@@ -12,6 +12,10 @@ This repository contains various directories and files that help design, build a
 | **asm/**        | software to be built for the CPU. |
 | **asm/so**      | Complete OS. |
 
+## Developing software
+
+Check the [programmer's manual](doc/programmers-manual.md) for a detailed guide on how to make software for the CPU.
+
 ## Running software in the CPU
 
 To run software in the *simulated* CPU one has two follow two steps: compilation and execution. Let's run one of the test programs for example:
