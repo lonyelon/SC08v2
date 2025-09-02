@@ -31,46 +31,46 @@ fn main() {
         i += 1;
     }
 
-    println!("steps:");
+//    println!("steps:");
     let mut step = 0;
     loop {
-        println!("- instruction: {}", match cpu.ins.0 {
-            0b00000_000 => "NOI.noa",
-            0b00001_001 => "JUM.num",
-            0b01000_001 => "LDD.num",
-            0b01000_010 => "LDD.ram",
-            0b01000_011 => "LDD.rom",
-            0b01000_100 => "LDD.ptr",
-            0b01000_101 => "LDD.prr",
-            0b01000_110 => "LDD.inp",
-            0b01001_010 => "STD.ram",
-            0b01001_100 => "STD.ptr",
-            0b01001_101 => "STD.prr",
-            0b01001_111 => "STD.out",
-            0b10000_001 => "ADD.num",
-            0b10001_001 => "SUB.num",
-            0b10010_001 => "NAN.num",
-            0b10100_001 => "SHL.num",
-            0b10101_001 => "SHR.num",
-            0b10110_001 => "EQU.num",
-            0b10111_001 => "GRE.num",
-            0b10000_010 => "ADD.ram",
-            0b10001_010 => "SUB.ram",
-            0b10010_010 => "NAN.ram",
-            0b10100_010 => "SHL.ram",
-            0b10101_010 => "SHR.ram",
-            0b10110_010 => "EQU.ram",
-            0b10111_010 => "GRE.ram",
-            _ => "ERR",
-        });
-        println!("  state:");
-        println!("    ic:  {:#04x}", cpu.ic);
-        println!("    prc: {:#04x}", cpu.prc);
-        println!("    ins: {:#04x}", cpu.ins);
-        println!("    dta: {:#04x}", cpu.dta);
-        println!("    aux: {:#04x}", cpu.aux);
-        println!("    adr: {:#04x}", cpu.adr);
-        println!("  step: {}", step);
+//        println!("- instruction: {}", match cpu.ins.0 {
+//            0b00000_000 => "NOI.noa",
+//            0b00001_001 => "JUM.num",
+//            0b01000_001 => "LDD.num",
+//            0b01000_010 => "LDD.ram",
+//            0b01000_011 => "LDD.rom",
+//            0b01000_100 => "LDD.ptr",
+//            0b01000_101 => "LDD.prr",
+//            0b01000_110 => "LDD.inp",
+//            0b01001_010 => "STD.ram",
+//            0b01001_100 => "STD.ptr",
+//            0b01001_101 => "STD.prr",
+//            0b01001_111 => "STD.out",
+//            0b10000_001 => "ADD.num",
+//            0b10001_001 => "SUB.num",
+//            0b10010_001 => "NAN.num",
+//            0b10100_001 => "SHL.num",
+//            0b10101_001 => "SHR.num",
+//            0b10110_001 => "EQU.num",
+//            0b10111_001 => "GRE.num",
+//            0b10000_010 => "ADD.ram",
+//            0b10001_010 => "SUB.ram",
+//            0b10010_010 => "NAN.ram",
+//            0b10100_010 => "SHL.ram",
+//            0b10101_010 => "SHR.ram",
+//            0b10110_010 => "EQU.ram",
+//            0b10111_010 => "GRE.ram",
+//            _ => "ERR",
+//        });
+//        println!("  state:");
+//        println!("    ic:  {:#04x}", cpu.ic);
+//        println!("    prc: {:#04x}", cpu.prc);
+//        println!("    ins: {:#04x}", cpu.ins);
+//        println!("    dta: {:#04x}", cpu.dta);
+//        println!("    aux: {:#04x}", cpu.aux);
+//        println!("    adr: {:#04x}", cpu.adr);
+//        println!("  step: {}", step);
 
         if step == 10000 {
             break;

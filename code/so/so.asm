@@ -18,11 +18,15 @@
 	JUM.ptr CALL_COUNTER
 
 ;; Shell
-#spc	SHELL
-#def	inp	0x00
-:SHELL	LDD.inp
-	STD.ram inp
-#end SHELL
+#spc    SHELL
+#def    inp	0x00
+:SHELL  _PSTR	"Choose program:"
+        LDD.inp
+        STD.ram inp
+	EQU.num 0x00
+	JUM.num :HELP
+	LD
+#end    SHELL
 
 ;; Shell data
 ;; Format N TO STR[0] .., STR[N]
