@@ -224,7 +224,7 @@ Files can be included into other files, like in C:
 
 Beware of include loops! The assembler doen't check for them yet!
 
-## Instructions and modifiers
+## Appendix 1: instructions
 
 | Instruction | Meaning               |                                                                                                                                                |
 |-------------|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|

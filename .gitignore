@@ -1,3 +1,5 @@
 simulator/target
 simulator/Cargo.lock
+compiler/target
+compiler/Cargo.lock
 *.bin

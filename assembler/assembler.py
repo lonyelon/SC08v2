@@ -132,16 +132,16 @@ def assemble(code):
                     sys.exit("Decimal number too large (>255).")
                 value = "{0:08b}".format(value)
                 code[i][2] = value
-            elif re.match("^:[A-Za-z][A-Za-z0-9_]*$", step[2]):
+            elif re.match("^:[A-Za-z][A-Za-z0-9_\-]*$", step[2]):
                 code[i].append("")
-            elif re.match("^:[A-Za-z][A-Za-z0-9_]*@[01]$", step[2]):
+            elif re.match("^:[A-Za-z][A-Za-z0-9_\-]*@[01]$", step[2]):
                 pass
             elif re.match("^[A-Za-z][A-Za-z0-9_]+$", step[2]):
                 value = int(defines[step[2]], base = 16)
                 value = "{0:08b}".format(value)
                 code[i][2] = value;
             else:
-                sys.exit("Unrecognized format for value")
+                sys.exit(f"Unrecognized format for value {code[i]}")
         code[i] = step[1:]
     return code
 
@@ -154,6 +154,7 @@ def countTo(pos, code):
 def positionReplace(code, positions):
     for i,line in enumerate(code):
         if len(line) == 3 and re.match("^:[A-Za-z][A-Za-z0-9\-_]*$", line[1]):
+            print(line[1])
             ref = positions[line[1].replace(":", "")]
             ref = countTo(ref, code)
             ref = "{0:016b}".format(ref)
