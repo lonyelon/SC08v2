@@ -12,6 +12,7 @@ This repository contains various directories and files that help design, build a
 | **code/**                 | software for the CPU. |
 | **code/so**               | complete OS. |
 | **doc/**                  | documentation. |
+| **kicad/**                | KiCAD hardware designs. |
 
 ## Developing software
 

@@ -2,4 +2,6 @@ simulator/target
 simulator/Cargo.lock
 compiler/target
 compiler/Cargo.lock
+kicad/ssc08v2-backups
+kicad/*bak
 *.bin
