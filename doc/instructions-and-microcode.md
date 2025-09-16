@@ -1,4 +1,4 @@
-# ssc08v02 instructions and modifiers
+# SC08v2 default instruction set
 
 The table below explains what every instruction in the CPU does.
 Every byte value not in the list is assumed to be `NOI.noa`, no instruction.

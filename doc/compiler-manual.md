@@ -1,7 +1,6 @@
 # How does the compiler work
 
-The compiler adds another layer of abstraction on top of the assembler, allowing for the use of a LISP-like programming language instead of the assembly language.
-I call this language `ssc08v02lsp`, which is a name too hard to remember, even for me.
+The compiler adds another layer of abstraction on top of the assembler, allowing for the use of a LISP-like programming language (`sclsp`) instead of the assembly language.
 
 The compiler evaluates every expression bottom-up, meaning that, in code like:
 

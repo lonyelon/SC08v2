@@ -1207,7 +1207,7 @@
 			(uuid "9e630922-7bf9-4f1d-a07b-6c20ae2d4ff6")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0138")
 					(unit 1)
@@ -1272,7 +1272,7 @@
 			(uuid "cf56966c-ad61-4b17-ba16-65e5a7967fa6")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0149")
 					(unit 1)
@@ -1337,7 +1337,7 @@
 			(uuid "c3822a0f-6005-45ab-9b6b-fd6c150b6e91")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0137")
 					(unit 1)
@@ -1402,7 +1402,7 @@
 			(uuid "89edcbd3-0b1c-4ba1-a69b-2d49378279d9")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0148")
 					(unit 1)
@@ -1467,7 +1467,7 @@
 			(uuid "4c28e964-3a5d-4867-9b8c-6f71d2161655")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0147")
 					(unit 1)
@@ -1578,7 +1578,7 @@
 			(uuid "041d1040-c4b1-47fd-b633-0859b250b3e1")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "U42")
 					(unit 1)
@@ -1643,7 +1643,7 @@
 			(uuid "01d01b7c-8099-48a6-8427-11f8b8a3c965")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0155")
 					(unit 1)
@@ -1708,7 +1708,7 @@
 			(uuid "ce3648eb-73e9-45ed-9074-da9d17ebfca7")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0153")
 					(unit 1)
@@ -1773,7 +1773,7 @@
 			(uuid "64004109-afd7-46f8-ba49-871422298049")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0135")
 					(unit 1)
@@ -1838,7 +1838,7 @@
 			(uuid "6615bdcf-d479-41b6-bc8f-15c58821c471")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0134")
 					(unit 1)
@@ -1904,7 +1904,7 @@
 			(uuid "9e3ca64f-b498-4e9b-9ee0-da83f6e7fe82")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0152")
 					(unit 1)
@@ -1969,7 +1969,7 @@
 			(uuid "94b921e4-7457-48aa-bd18-bedbf9f798c1")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0154")
 					(unit 1)
@@ -2034,7 +2034,7 @@
 			(uuid "daecda29-3d9d-46a0-b81a-7c0a389ef177")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0133")
 					(unit 1)
@@ -2145,7 +2145,7 @@
 			(uuid "bb0082b9-f6f9-45b7-9793-249c7ce061ec")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "U39")
 					(unit 1)
@@ -2210,7 +2210,7 @@
 			(uuid "cc529040-3a58-4a4e-88e8-1f89abe90805")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0139")
 					(unit 1)
@@ -2321,7 +2321,7 @@
 			(uuid "52d1b5bc-b0c7-4832-b5c9-8f03f881550d")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "U44")
 					(unit 1)
@@ -2386,7 +2386,7 @@
 			(uuid "c6da472a-5f79-4045-a6e5-4b9b15b6c458")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0136")
 					(unit 1)
@@ -2452,7 +2452,7 @@
 			(uuid "2c683dc5-c217-4b1b-afb7-46674aa9627c")
 		)
 		(instances
-			(project "ssc08v2"
+			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/240d2b32-bde1-43ff-8dc8-c8260dadac4a"
 					(reference "#PWR0151")
 					(unit 1)

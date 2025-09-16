@@ -1,6 +1,6 @@
-# SSC08v02: Sergio's Super Simple Computer (8-bits, version 2)
+# SC08v2: Simple Computer (8-bits, version 2)
 
-The SSC08v2 is a super-simple, open-hardware 8bit computer built for retro hardware enthusiasts.
+The SC08v2 is a super-simple, open-hardware 8bit computer built for retro hardware enthusiasts.
 
 This repository contains various directories and files that help design, build and test both the computer's hardware and it's software. Those files and directories are the following:
 
@@ -29,7 +29,7 @@ This shows that the simulator needs machine code and can not work with assembly 
 
 ## Contributing
 
-Anything can be added to this repo, in whatever programming language you choose to make it, as long as it is a tool or some documentation for the SSC08v02.
+Anything can be added to this repo, in whatever programming language you choose to make it, as long as it is a tool or some documentation for the SC08v2.
 
 If you want to start somewhere, check the following section :)
 

@@ -1,6 +1,6 @@
 # The programmer's manual
 
-This is the manual for making software for the ssc08v02.
+This is the manual for making software for the SC08v2.
 
 ## The basics
 
