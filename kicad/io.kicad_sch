@@ -2410,6 +2410,30 @@
 		(color 0 0 0 0)
 		(uuid "f4a57bfb-88ea-46d8-86f7-c95983394f45")
 	)
+	(no_connect
+		(at 73.66 107.95)
+		(uuid "30575c14-1e79-4cf6-99f3-bdce33f994a3")
+	)
+	(no_connect
+		(at 204.47 107.95)
+		(uuid "401829b2-267c-4cd1-9b71-fcf6256df182")
+	)
+	(no_connect
+		(at 88.9 113.03)
+		(uuid "7e3ccad5-98ec-44ff-8be1-00c54320dec0")
+	)
+	(no_connect
+		(at 219.71 110.49)
+		(uuid "8251aaf0-ab42-4e76-b05a-c15852c09e16")
+	)
+	(no_connect
+		(at 204.47 105.41)
+		(uuid "b025f057-f734-49a4-b24f-bf72f3ef2844")
+	)
+	(no_connect
+		(at 73.66 110.49)
+		(uuid "cfa91cc8-fcbe-44ff-8521-1650e5cbb239")
+	)
 	(wire
 		(pts
 			(xy 228.6 120.65) (xy 228.6 123.19)
@@ -3284,8 +3308,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0754aebf-6cc4-4f73-b436-62e409987619")
-		(property "Reference" "INP1"
-			(at 240.792 58.674 0)
+		(property "Reference" "INP_U1"
+			(at 246.634 81.534 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3302,7 +3326,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-20_W7.62mm"
 			(at 242.57 64.77 0)
 			(effects
 				(font
@@ -3392,7 +3416,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "INP1")
+					(reference "INP_U1")
 					(unit 1)
 				)
 			)
@@ -3538,7 +3562,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "225c2497-ec77-4b8a-a0d2-637f61f5e1ee")
-		(property "Reference" "C32"
+		(property "Reference" "OUT_U_C1"
 			(at 114.3 40.894 90)
 			(effects
 				(font
@@ -3554,7 +3578,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 114.3 46.0248 0)
 			(effects
 				(font
@@ -3590,113 +3614,8 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "C32")
+					(reference "OUT_U_C1")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "74xx:74HC74")
-		(at 212.09 107.95 0)
-		(unit 2)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "35e37fbf-94b4-41e1-bc94-6109ee6a36f5")
-		(property "Reference" "INP_FLAG0"
-			(at 213.868 98.552 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "74HC74"
-			(at 214.2333 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 212.09 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "74xx/74hc_hct74.pdf"
-			(at 212.09 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual D Flip-flop, Set & Reset"
-			(at 212.09 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "10"
-			(uuid "91c556bb-1550-4bbb-8a14-91726be9611d")
-		)
-		(pin "9"
-			(uuid "1c4c2517-a111-46a9-8fd2-1dea6b073b81")
-		)
-		(pin "7"
-			(uuid "e26caaf6-f4fc-4f90-8f9c-8ce3463d9440")
-		)
-		(pin "14"
-			(uuid "309c73fe-4f2c-4d07-9343-fad538c9a6b4")
-		)
-		(pin "8"
-			(uuid "2b395511-8f34-40a3-a0e4-629eb9ae157d")
-		)
-		(pin "11"
-			(uuid "06beaad4-1329-473c-b08d-2ae8cd1a52a1")
-		)
-		(pin "13"
-			(uuid "a683dbfa-9d13-4be4-86fc-44c7f0a3114d")
-		)
-		(pin "6"
-			(uuid "f3ab1b11-b376-47e7-aeaf-db7386fe15c5")
-		)
-		(pin "12"
-			(uuid "724d2cfc-3e7a-4258-83d2-3c68340defb7")
-		)
-		(pin "5"
-			(uuid "db65f3b7-c294-417d-8e04-5b9f40d49b2f")
-		)
-		(pin "1"
-			(uuid "605d06a1-8f9d-4d7b-a937-2b9dc04a3d47")
-		)
-		(pin "4"
-			(uuid "cc4a93a8-24a5-4b58-8d8e-c5b4767abacf")
-		)
-		(pin "3"
-			(uuid "8d326f8d-6dfe-464e-bef9-e08e7a942b09")
-		)
-		(pin "2"
-			(uuid "21b76d48-d9a1-45b5-ba6f-9559b156b4ab")
-		)
-		(instances
-			(project "SC08v2"
-				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "INP_FLAG0")
-					(unit 2)
 				)
 			)
 		)
@@ -4166,8 +4085,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6a3c1d31-af02-48ac-a4c1-6f96d8f18ad4")
-		(property "Reference" "C31"
-			(at 40.64 33.274 90)
+		(property "Reference" "IODFLIPFLOP_U_C1"
+			(at 46.736 33.528 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4182,7 +4101,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 40.64 38.4048 0)
 			(effects
 				(font
@@ -4218,8 +4137,114 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "C31")
+					(reference "IODFLIPFLOP_U_C1")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "74xx:74HC74")
+		(at 33.02 52.07 0)
+		(unit 3)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6c936b56-ecba-4cef-b156-e0fda000bd35")
+		(property "Reference" "IODFLIPFLOP_U1"
+			(at 39.37 50.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "74HC74"
+			(at 39.37 53.3399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+			(at 33.02 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "74xx/74hc_hct74.pdf"
+			(at 33.02 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual D Flip-flop, Set & Reset"
+			(at 33.02 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "13"
+			(uuid "e227433a-3dbf-4d8a-b821-e7f8b5de211c")
+		)
+		(pin "3"
+			(uuid "2247fa40-54cf-4669-acff-ba0f97373d89")
+		)
+		(pin "12"
+			(uuid "63015cf4-1384-4445-8b90-6181d5a69e72")
+		)
+		(pin "10"
+			(uuid "c8106a0c-918a-41d4-97f0-86bd4a9322d2")
+		)
+		(pin "11"
+			(uuid "a099b96e-7fd5-473d-b089-6ca070446c1b")
+		)
+		(pin "7"
+			(uuid "7510b6bf-c6e3-4f73-80ee-b736466a3dd3")
+		)
+		(pin "8"
+			(uuid "634a522f-945f-44e9-9881-0808bb73aebc")
+		)
+		(pin "14"
+			(uuid "bcd97403-cfcd-4a15-b42c-1e9adc0bb395")
+		)
+		(pin "1"
+			(uuid "ffdc2b6b-9557-4f17-9b0f-73dc1c629a3a")
+		)
+		(pin "9"
+			(uuid "77d39939-9ce3-4dd3-b88f-961aa780de30")
+		)
+		(pin "4"
+			(uuid "e34378f1-8f75-4f5b-a6f5-d9819bdb973c")
+		)
+		(pin "2"
+			(uuid "9d81ee85-8ea9-4ef5-b7f3-fd0f09d1d15f")
+		)
+		(pin "5"
+			(uuid "d51f5911-9904-478f-83cd-d647371f8ef2")
+		)
+		(pin "6"
+			(uuid "3e385130-e7da-43ac-be1b-ccf7792f1f14")
+		)
+		(instances
+			(project ""
+				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
+					(reference "IODFLIPFLOP_U1")
+					(unit 3)
 				)
 			)
 		)
@@ -4233,7 +4258,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6dbbaf65-ad48-4450-b40e-b0360fd1fdf1")
-		(property "Reference" "C33"
+		(property "Reference" "OUT_FLAG_U_C1"
 			(at 114.3 94.234 90)
 			(effects
 				(font
@@ -4249,7 +4274,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 114.3 99.3648 0)
 			(effects
 				(font
@@ -4285,7 +4310,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "C33")
+					(reference "OUT_FLAG_U_C1")
 					(unit 1)
 				)
 			)
@@ -4365,7 +4390,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6f427502-4db9-449c-9c33-d7c653079843")
-		(property "Reference" "C28"
+		(property "Reference" "INP_U1_C1"
 			(at 250.19 38.354 90)
 			(effects
 				(font
@@ -4381,7 +4406,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 250.19 43.4848 0)
 			(effects
 				(font
@@ -4417,7 +4442,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "C28")
+					(reference "INP_U1_C1")
 					(unit 1)
 				)
 			)
@@ -4432,7 +4457,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7134f55c-f057-493e-b613-8206f9311983")
-		(property "Reference" "C30"
+		(property "Reference" "INPFLAG_U_C1"
 			(at 248.92 91.694 90)
 			(effects
 				(font
@@ -4448,7 +4473,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 248.92 96.8248 0)
 			(effects
 				(font
@@ -4484,113 +4509,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "C30")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "74xx:74HC74")
-		(at 81.28 110.49 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "73e4501e-c94a-4f50-a11f-a29263830822")
-		(property "Reference" "OUT_FLAG0"
-			(at 83.4233 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "74HC74"
-			(at 83.4233 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 81.28 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "74xx/74hc_hct74.pdf"
-			(at 81.28 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Dual D Flip-flop, Set & Reset"
-			(at 81.28 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "10"
-			(uuid "21d53c1e-1461-4347-a510-f86002513e73")
-		)
-		(pin "9"
-			(uuid "bd0635cd-656e-48a3-b66f-f0b80d1e125c")
-		)
-		(pin "7"
-			(uuid "e26caaf6-f4fc-4f90-8f9c-8ce3463d943f")
-		)
-		(pin "14"
-			(uuid "309c73fe-4f2c-4d07-9343-fad538c9a6b3")
-		)
-		(pin "8"
-			(uuid "9b80b8d4-7032-4856-a422-6dfe131ce1e5")
-		)
-		(pin "11"
-			(uuid "edcf39ab-05b7-49b1-a54b-5c7ad9304164")
-		)
-		(pin "13"
-			(uuid "11eef75a-ff04-4590-993a-73dbef74477c")
-		)
-		(pin "6"
-			(uuid "5734d0d1-1fe2-4517-91bb-9773e3e9daec")
-		)
-		(pin "12"
-			(uuid "c7d52ee5-5940-4340-b0e0-afd333d1035a")
-		)
-		(pin "5"
-			(uuid "146b7769-7986-497b-9526-d80265a8c612")
-		)
-		(pin "1"
-			(uuid "d1a9b6bd-ee10-44b0-99d8-c0b1f10cf632")
-		)
-		(pin "4"
-			(uuid "69fde168-92e6-4841-ba96-d81eb361418d")
-		)
-		(pin "3"
-			(uuid "5b07ab86-529c-4657-b7cc-e7fabdd0d39b")
-		)
-		(pin "2"
-			(uuid "eeac6c86-881d-45da-9ace-fd167f417a9c")
-		)
-		(instances
-			(project "SC08v2"
-				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "OUT_FLAG0")
+					(reference "INPFLAG_U_C1")
 					(unit 1)
 				)
 			)
@@ -4925,6 +4844,112 @@
 		)
 	)
 	(symbol
+		(lib_id "74xx:74HC74")
+		(at 81.28 110.49 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "936a3d79-90f1-40e3-8d97-eedd263ae064")
+		(property "Reference" "IODFLIPFLOP_U1"
+			(at 83.4233 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "74HC74"
+			(at 83.4233 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+			(at 81.28 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "74xx/74hc_hct74.pdf"
+			(at 81.28 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Dual D Flip-flop, Set & Reset"
+			(at 81.28 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "13"
+			(uuid "e227433a-3dbf-4d8a-b821-e7f8b5de211d")
+		)
+		(pin "3"
+			(uuid "2247fa40-54cf-4669-acff-ba0f97373d8a")
+		)
+		(pin "12"
+			(uuid "63015cf4-1384-4445-8b90-6181d5a69e73")
+		)
+		(pin "10"
+			(uuid "c8106a0c-918a-41d4-97f0-86bd4a9322d3")
+		)
+		(pin "11"
+			(uuid "a099b96e-7fd5-473d-b089-6ca070446c1c")
+		)
+		(pin "7"
+			(uuid "7510b6bf-c6e3-4f73-80ee-b736466a3dd4")
+		)
+		(pin "8"
+			(uuid "634a522f-945f-44e9-9881-0808bb73aebd")
+		)
+		(pin "14"
+			(uuid "bcd97403-cfcd-4a15-b42c-1e9adc0bb396")
+		)
+		(pin "1"
+			(uuid "ffdc2b6b-9557-4f17-9b0f-73dc1c629a3b")
+		)
+		(pin "9"
+			(uuid "77d39939-9ce3-4dd3-b88f-961aa780de31")
+		)
+		(pin "4"
+			(uuid "e34378f1-8f75-4f5b-a6f5-d9819bdb973d")
+		)
+		(pin "2"
+			(uuid "9d81ee85-8ea9-4ef5-b7f3-fd0f09d1d160")
+		)
+		(pin "5"
+			(uuid "d51f5911-9904-478f-83cd-d647371f8ef3")
+		)
+		(pin "6"
+			(uuid "3e385130-e7da-43ac-be1b-ccf7792f1f15")
+		)
+		(instances
+			(project ""
+				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
+					(reference "IODFLIPFLOP_U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 208.28 44.45 90)
 		(unit 1)
@@ -4933,7 +4958,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a128ac4b-3815-411b-979f-bf5800e13aa7")
-		(property "Reference" "C29"
+		(property "Reference" "INP_U0_C1"
 			(at 212.09 38.354 90)
 			(effects
 				(font
@@ -4949,7 +4974,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 212.09 43.4848 0)
 			(effects
 				(font
@@ -4985,7 +5010,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "C29")
+					(reference "INP_U0_C1")
 					(unit 1)
 				)
 			)
@@ -5131,7 +5156,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a4ecc8af-0887-4671-b8ad-e0291adeae0f")
-		(property "Reference" "J5"
+		(property "Reference" "OUT_CONN0"
 			(at 63.5 44.704 90)
 			(effects
 				(font
@@ -5149,7 +5174,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 63.5 50.8 0)
 			(effects
 				(font
@@ -5185,7 +5210,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "J5")
+					(reference "OUT_CONN0")
 					(unit 1)
 				)
 			)
@@ -5200,7 +5225,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a724f178-4cc3-4ea8-b198-37e635d34e78")
-		(property "Reference" "INP_FLAG1"
+		(property "Reference" "INPFLAG_U1"
 			(at 244.348 135.128 0)
 			(effects
 				(font
@@ -5218,7 +5243,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-20_W7.62mm"
 			(at 241.3 118.11 0)
 			(effects
 				(font
@@ -5308,7 +5333,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "INP_FLAG1")
+					(reference "INPFLAG_U1")
 					(unit 1)
 				)
 			)
@@ -5453,7 +5478,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a99129ba-862c-4048-b98d-90a531c0fa2a")
-		(property "Reference" "J9"
+		(property "Reference" "INP_CONN1"
 			(at 168.148 45.466 90)
 			(effects
 				(font
@@ -5471,7 +5496,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 168.91 52.07 0)
 			(effects
 				(font
@@ -5507,7 +5532,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "J9")
+					(reference "INP_CONN1")
 					(unit 1)
 				)
 			)
@@ -5522,8 +5547,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ab57946a-5ab1-45bc-bb99-bea830eb8501")
-		(property "Reference" "OUT1"
-			(at 104.902 65.532 0)
+		(property "Reference" "OUT_U1"
+			(at 103.378 66.294 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5630,7 +5655,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "OUT1")
+					(reference "OUT_U1")
 					(unit 1)
 				)
 			)
@@ -5638,15 +5663,16 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC74")
-		(at 33.02 52.07 0)
-		(unit 3)
+		(at 212.09 107.95 0)
+		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "addccb83-0c5b-497a-816f-e38db2169e16")
-		(property "Reference" "U38"
-			(at 39.37 50.7999 0)
+		(fields_autoplaced yes)
+		(uuid "b882c840-6e23-4008-808d-445341b8cbdc")
+		(property "Reference" "IODFLIPFLOP_U1"
+			(at 214.2333 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5655,7 +5681,7 @@
 			)
 		)
 		(property "Value" "74HC74"
-			(at 38.862 54.864 0)
+			(at 214.2333 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5663,8 +5689,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 33.02 52.07 0)
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
+			(at 212.09 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5673,7 +5699,7 @@
 			)
 		)
 		(property "Datasheet" "74xx/74hc_hct74.pdf"
-			(at 33.02 52.07 0)
+			(at 212.09 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5682,7 +5708,7 @@
 			)
 		)
 		(property "Description" "Dual D Flip-flop, Set & Reset"
-			(at 33.02 52.07 0)
+			(at 212.09 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5690,53 +5716,53 @@
 				(hide yes)
 			)
 		)
-		(pin "10"
-			(uuid "21d53c1e-1461-4347-a510-f86002513e75")
-		)
-		(pin "9"
-			(uuid "bd0635cd-656e-48a3-b66f-f0b80d1e125e")
-		)
-		(pin "7"
-			(uuid "529bccb5-c823-4ce2-b7fc-63aa6a0cedc8")
-		)
-		(pin "14"
-			(uuid "e79c6410-5272-4539-9246-ae2d538138c8")
-		)
-		(pin "8"
-			(uuid "9b80b8d4-7032-4856-a422-6dfe131ce1e7")
-		)
-		(pin "11"
-			(uuid "edcf39ab-05b7-49b1-a54b-5c7ad9304166")
-		)
 		(pin "13"
-			(uuid "11eef75a-ff04-4590-993a-73dbef74477e")
-		)
-		(pin "6"
-			(uuid "f3ab1b11-b376-47e7-aeaf-db7386fe15c6")
-		)
-		(pin "12"
-			(uuid "c7d52ee5-5940-4340-b0e0-afd333d1035c")
-		)
-		(pin "5"
-			(uuid "db65f3b7-c294-417d-8e04-5b9f40d49b30")
-		)
-		(pin "1"
-			(uuid "605d06a1-8f9d-4d7b-a937-2b9dc04a3d48")
-		)
-		(pin "4"
-			(uuid "cc4a93a8-24a5-4b58-8d8e-c5b4767abad0")
+			(uuid "e227433a-3dbf-4d8a-b821-e7f8b5de211e")
 		)
 		(pin "3"
-			(uuid "8d326f8d-6dfe-464e-bef9-e08e7a942b0a")
+			(uuid "2247fa40-54cf-4669-acff-ba0f97373d8b")
+		)
+		(pin "12"
+			(uuid "63015cf4-1384-4445-8b90-6181d5a69e74")
+		)
+		(pin "10"
+			(uuid "c8106a0c-918a-41d4-97f0-86bd4a9322d4")
+		)
+		(pin "11"
+			(uuid "a099b96e-7fd5-473d-b089-6ca070446c1d")
+		)
+		(pin "7"
+			(uuid "7510b6bf-c6e3-4f73-80ee-b736466a3dd5")
+		)
+		(pin "8"
+			(uuid "634a522f-945f-44e9-9881-0808bb73aebe")
+		)
+		(pin "14"
+			(uuid "bcd97403-cfcd-4a15-b42c-1e9adc0bb397")
+		)
+		(pin "1"
+			(uuid "ffdc2b6b-9557-4f17-9b0f-73dc1c629a3c")
+		)
+		(pin "9"
+			(uuid "77d39939-9ce3-4dd3-b88f-961aa780de32")
+		)
+		(pin "4"
+			(uuid "e34378f1-8f75-4f5b-a6f5-d9819bdb973e")
 		)
 		(pin "2"
-			(uuid "21b76d48-d9a1-45b5-ba6f-9559b156b4ac")
+			(uuid "9d81ee85-8ea9-4ef5-b7f3-fd0f09d1d161")
+		)
+		(pin "5"
+			(uuid "d51f5911-9904-478f-83cd-d647371f8ef4")
+		)
+		(pin "6"
+			(uuid "3e385130-e7da-43ac-be1b-ccf7792f1f16")
 		)
 		(instances
-			(project "SC08v2"
+			(project ""
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "U38")
-					(unit 3)
+					(reference "IODFLIPFLOP_U1")
+					(unit 2)
 				)
 			)
 		)
@@ -5750,8 +5776,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c6ce0b50-ccd7-4c56-b578-48908311a371")
-		(property "Reference" "INP0"
-			(at 202.184 60.96 0)
+		(property "Reference" "INP_U0"
+			(at 208.788 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5858,7 +5884,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "INP0")
+					(reference "INP_U0")
 					(unit 1)
 				)
 			)
@@ -6071,7 +6097,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cf36ec22-148b-4ca3-9f49-901af09cb9b7")
-		(property "Reference" "J7"
+		(property "Reference" "INP_CONN2"
 			(at 186.69 45.72 0)
 			(effects
 				(font
@@ -6087,7 +6113,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical"
 			(at 186.69 59.69 0)
 			(effects
 				(font
@@ -6141,7 +6167,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "J7")
+					(reference "INP_CONN2")
 					(unit 1)
 				)
 			)
@@ -6156,7 +6182,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d0f0d5ee-d470-423f-8af2-2395c8dee894")
-		(property "Reference" "OUT_FLAG1"
+		(property "Reference" "OUT_FLAG_U1"
 			(at 109.728 137.922 0)
 			(effects
 				(font
@@ -6174,7 +6200,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-20_W7.62mm"
 			(at 106.68 120.65 0)
 			(effects
 				(font
@@ -6264,7 +6290,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "OUT_FLAG1")
+					(reference "OUT_FLAG_U1")
 					(unit 1)
 				)
 			)
@@ -6279,8 +6305,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d1623c68-62c1-4c6d-9b3a-03f0c49c842a")
-		(property "Reference" "J8"
-			(at 154.686 45.72 90)
+		(property "Reference" "INP_CONN0"
+			(at 152.4 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6297,7 +6323,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 153.67 52.07 0)
 			(effects
 				(font
@@ -6333,7 +6359,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "J8")
+					(reference "INP_CONN0")
 					(unit 1)
 				)
 			)
@@ -6414,7 +6440,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "efdc5db5-8cca-4d99-9e40-3a6da7e11b0f")
-		(property "Reference" "J1"
+		(property "Reference" "OUT_CONN1"
 			(at 77.724 45.72 90)
 			(effects
 				(font
@@ -6432,7 +6458,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical"
 			(at 78.74 50.8 0)
 			(effects
 				(font
@@ -6465,7 +6491,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "J1")
+					(reference "OUT_CONN1")
 					(unit 1)
 				)
 			)
@@ -6546,7 +6572,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6500a2c-36ee-49e1-9b8e-5a7183d1de55")
-		(property "Reference" "J4"
+		(property "Reference" "OUT_CONN2"
 			(at 127 62.2299 0)
 			(effects
 				(font
@@ -6564,7 +6590,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x08_P2.54mm_Vertical"
 			(at 124.46 62.23 0)
 			(effects
 				(font
@@ -6618,7 +6644,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "J4")
+					(reference "OUT_CONN2")
 					(unit 1)
 				)
 			)

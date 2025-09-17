@@ -1880,7 +1880,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1898,7 +1898,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1916,7 +1916,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1934,7 +1934,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1952,7 +1952,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1970,7 +1970,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1988,7 +1988,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2006,7 +2006,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2024,7 +2024,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "23"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2042,7 +2042,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "22"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2060,7 +2060,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "19"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2078,7 +2078,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2096,7 +2096,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "10"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2114,7 +2114,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "11"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2132,7 +2132,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "13"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2150,7 +2150,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "14"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2168,7 +2168,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2186,7 +2186,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2204,7 +2204,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "17"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2222,7 +2222,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "21"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2240,7 +2240,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "20"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2258,7 +2258,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "18"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2276,7 +2276,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "24"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2294,7 +2294,7 @@
 							)
 						)
 					)
-					(number ""
+					(number "12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3007,6 +3007,14 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ff41b40d-2dc1-4cf8-a22a-00ac94390d42")
+	)
+	(no_connect
+		(at 153.67 92.71)
+		(uuid "d03202f4-4385-4948-b277-7ed73f8b0f86")
+	)
+	(no_connect
+		(at 279.4 58.42)
+		(uuid "e843b677-0b48-4948-a139-635d66f8416b")
 	)
 	(wire
 		(pts
@@ -3878,7 +3886,7 @@
 		)
 		(uuid "ffe21305-9f95-4a3a-9763-3bda8cbbfd10")
 	)
-	(label "ADR_I"
+	(label "ADR0_I"
 		(at 158.75 143.51 0)
 		(effects
 			(font
@@ -3898,7 +3906,7 @@
 		)
 		(uuid "00fdd209-8064-4e6e-9bc2-eaed167a618f")
 	)
-	(label "~{ADR_WE}"
+	(label "~{ADR0_WE}"
 		(at 133.35 45.72 180)
 		(effects
 			(font
@@ -3928,7 +3936,7 @@
 		)
 		(uuid "037aba36-af66-451e-beee-0498688c7045")
 	)
-	(label "IR_OUT_3"
+	(label "IR_OUT_6"
 		(at 72.39 74.93 180)
 		(effects
 			(font
@@ -4008,7 +4016,7 @@
 		)
 		(uuid "104e26b1-1cb3-4fb7-ad13-5d3ad9e251d4")
 	)
-	(label "ADRN_I"
+	(label "ADR12_I"
 		(at 158.75 156.21 0)
 		(effects
 			(font
@@ -4078,7 +4086,7 @@
 		)
 		(uuid "18be9913-7330-41e5-9992-1c9f175af610")
 	)
-	(label "~{ADR0_WE}"
+	(label "~{ADR1_WE}"
 		(at 158.75 151.13 0)
 		(effects
 			(font
@@ -4108,7 +4116,7 @@
 		)
 		(uuid "1d4ea4f9-c908-4d21-8744-713adff8f356")
 	)
-	(label "IR_OUT_2"
+	(label "IR_OUT_5"
 		(at 72.39 72.39 180)
 		(effects
 			(font
@@ -4138,7 +4146,7 @@
 		)
 		(uuid "1fbde5f5-f931-4a7a-9207-349879d6b4cb")
 	)
-	(label "~{ADR_WE}"
+	(label "~{ADR0_WE}"
 		(at 158.75 140.97 0)
 		(effects
 			(font
@@ -4318,6 +4326,16 @@
 		)
 		(uuid "44178ccf-3368-4dba-9ac0-b96f7be16160")
 	)
+	(label "~{ALU_OE}"
+		(at 72.39 82.55 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "45a6bf70-bb3e-4ff3-8c92-438915e39b5c")
+	)
 	(label "~{AUX_OE}"
 		(at 60.96 181.61 180)
 		(effects
@@ -4468,7 +4486,7 @@
 		)
 		(uuid "62a65bea-58c7-4bec-bd34-0052472878eb")
 	)
-	(label "ADR_I"
+	(label "ADR0_I"
 		(at 133.35 48.26 180)
 		(effects
 			(font
@@ -4488,7 +4506,7 @@
 		)
 		(uuid "62c07099-ec7c-4a19-a27e-60a27a8d8515")
 	)
-	(label "ADRN_I"
+	(label "ADR12_I"
 		(at 193.04 137.16 180)
 		(effects
 			(font
@@ -4498,7 +4516,7 @@
 		)
 		(uuid "62c3fe95-f865-420f-b973-7a3e84397f84")
 	)
-	(label "~{ADR1_WE}"
+	(label "~{ADR2_WE}"
 		(at 158.75 153.67 0)
 		(effects
 			(font
@@ -4628,7 +4646,7 @@
 		)
 		(uuid "73c984b5-cdcc-48fe-aa52-47d836baa753")
 	)
-	(label "ALU_OE"
+	(label "~{ALU_OE}"
 		(at 158.75 133.35 0)
 		(effects
 			(font
@@ -4968,7 +4986,7 @@
 		)
 		(uuid "95dd423b-04e5-4746-be48-d78dd98d6e4d")
 	)
-	(label "~{ADR1_WE}"
+	(label "~{ADR2_WE}"
 		(at 193.04 134.62 180)
 		(effects
 			(font
@@ -5098,7 +5116,7 @@
 		)
 		(uuid "a362e7e9-0a2d-4f08-b879-5b84e4c069d0")
 	)
-	(label "ADR_I"
+	(label "ADR0_I"
 		(at 133.35 100.33 180)
 		(effects
 			(font
@@ -5138,7 +5156,7 @@
 		)
 		(uuid "a6ba28bf-17ad-4bc1-8551-ad0995ab3ed4")
 	)
-	(label "~{CLK}"
+	(label "CLK"
 		(at 139.7 186.69 180)
 		(effects
 			(font
@@ -5398,7 +5416,7 @@
 		)
 		(uuid "cad5fa8b-605f-4893-99c4-f48027f1c651")
 	)
-	(label "IR_OUT_4"
+	(label "IR_OUT_7"
 		(at 72.39 77.47 180)
 		(effects
 			(font
@@ -5558,7 +5576,7 @@
 		)
 		(uuid "dfcf6ae4-0930-4960-ad8a-34b8603bb2ca")
 	)
-	(label "~{ADR_WE}"
+	(label "~{ADR0_WE}"
 		(at 133.35 99.06 180)
 		(effects
 			(font
@@ -5778,7 +5796,7 @@
 		)
 		(uuid "f449076b-7239-488d-aa2f-49e896f10c1f")
 	)
-	(label "~{ADR0_WE}"
+	(label "~{ADR1_WE}"
 		(at 193.04 132.08 180)
 		(effects
 			(font
@@ -5887,7 +5905,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00f8b9d8-51f1-4319-b3fa-a1e0c41de222")
-		(property "Reference" "C_DTB1"
+		(property "Reference" "DTB_U_C1"
 			(at 44.958 70.358 90)
 			(effects
 				(font
@@ -5903,7 +5921,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 45.72 73.9648 0)
 			(effects
 				(font
@@ -5939,7 +5957,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_DTB1")
+					(reference "DTB_U_C1")
 					(unit 1)
 				)
 			)
@@ -6019,7 +6037,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "05b34261-5e07-4cb0-9408-f5642b9a7ce0")
-		(property "Reference" "C_ROM1"
+		(property "Reference" "ROM_C1"
 			(at 113.03 154.94 90)
 			(effects
 				(font
@@ -6035,7 +6053,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Radial_D5.0mm_H5.0mm_P2.00mm"
 			(at 116.84 160.3248 0)
 			(effects
 				(font
@@ -6071,7 +6089,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_ROM1")
+					(reference "ROM_C1")
 					(unit 1)
 				)
 			)
@@ -6086,7 +6104,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "063c863e-6a0d-488c-889c-e6beffddeeb3")
-		(property "Reference" "C_IR1"
+		(property "Reference" "IR_U_C1"
 			(at 106.68 82.804 90)
 			(effects
 				(font
@@ -6102,7 +6120,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 106.68 87.9348 0)
 			(effects
 				(font
@@ -6138,7 +6156,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_IR1")
+					(reference "IR_U_C1")
 					(unit 1)
 				)
 			)
@@ -6611,8 +6629,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2fc597dc-abb8-4847-a7ac-7484f89f03d4")
-		(property "Reference" "C_USB1"
-			(at 201.93 72.136 0)
+		(property "Reference" "USB_CONN_C1"
+			(at 196.596 72.136 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6629,7 +6647,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 213.0552 76.2 0)
 			(effects
 				(font
@@ -6665,7 +6683,7 @@
 		(instances
 			(project ""
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_USB1")
+					(reference "USB_CONN_C1")
 					(unit 1)
 				)
 			)
@@ -6681,7 +6699,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3216c4cf-297e-4606-b3c8-8fe0cd2807f4")
-		(property "Reference" "J2"
+		(property "Reference" "USB_CONN1"
 			(at 219.71 33.02 0)
 			(effects
 				(font
@@ -6697,7 +6715,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4125-xx-x-0190_6P_TopMnt_Horizontal"
 			(at 223.52 48.26 0)
 			(effects
 				(font
@@ -6748,7 +6766,7 @@
 		(instances
 			(project ""
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "J2")
+					(reference "USB_CONN1")
 					(unit 1)
 				)
 			)
@@ -6763,8 +6781,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "393099ad-1659-4efe-828f-68425456d5db")
-		(property "Reference" "RAM1"
-			(at 189.738 53.34 0)
+		(property "Reference" "RAM_U1"
+			(at 187.452 53.594 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6781,7 +6799,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-24_18.0mmx34.29mm_W15.24mm"
 			(at 187.96 57.15 0)
 			(effects
 				(font
@@ -6808,82 +6826,82 @@
 				(hide yes)
 			)
 		)
-		(pin ""
+		(pin "2"
 			(uuid "b2508161-f6d8-46b7-837b-cac4e568f36e")
 		)
-		(pin ""
+		(pin "14"
 			(uuid "67adcb68-a893-421c-a771-eb73e0932ab4")
 		)
-		(pin ""
+		(pin "15"
 			(uuid "7c1b4f1c-7690-425a-aa26-6ce7a8d23fdc")
 		)
-		(pin ""
+		(pin "11"
 			(uuid "745ac424-4c45-4af0-a365-69b579e2aa5c")
 		)
-		(pin ""
+		(pin "18"
 			(uuid "21ea14bf-7e7c-4b25-91d5-c83181b1d1b8")
 		)
-		(pin ""
+		(pin "23"
 			(uuid "2deb27bc-c5e5-4f8a-add1-48e652c946f0")
 		)
-		(pin ""
+		(pin "3"
 			(uuid "4c495689-3cab-4ea5-bab2-b5a6d4d7b73f")
 		)
-		(pin ""
+		(pin "5"
 			(uuid "e099b5ee-f8b9-4b6e-a4b5-74098744497e")
 		)
-		(pin ""
+		(pin "9"
 			(uuid "3a0ba1d0-17b8-4158-bbd2-d834bf97952a")
 		)
-		(pin ""
+		(pin "7"
 			(uuid "61a2c144-ebcd-4d76-bbaa-0a23244f2e3b")
 		)
-		(pin ""
+		(pin "13"
 			(uuid "d5306acc-d93f-473d-8d6a-bdf170749d3c")
 		)
-		(pin ""
+		(pin "17"
 			(uuid "f3e93670-1202-4bd5-8886-cdf05b36d9d0")
 		)
-		(pin ""
+		(pin "19"
 			(uuid "4a7e8f28-5412-43ef-a97c-028f18a5cbdd")
 		)
-		(pin ""
+		(pin "20"
 			(uuid "2b73be32-51e3-45ad-910f-456eb608c9e7")
 		)
-		(pin ""
+		(pin "10"
 			(uuid "fb6c09d2-a369-4a8d-90f2-5c2419cb3b2e")
 		)
-		(pin ""
+		(pin "21"
 			(uuid "a12fb062-b50e-448f-be94-020334b9b55e")
 		)
-		(pin ""
+		(pin "8"
 			(uuid "db1464c0-e29c-4e41-bf77-7741d52b682c")
 		)
-		(pin ""
+		(pin "6"
 			(uuid "689dc644-7109-4d29-9ca1-0a3648901d89")
 		)
-		(pin ""
+		(pin "16"
 			(uuid "0c714917-cb3a-49bc-8e5c-9e88564067e2")
 		)
-		(pin ""
+		(pin "1"
 			(uuid "a8d6060e-dce6-4d18-8bbf-27333149a1f6")
 		)
-		(pin ""
+		(pin "4"
 			(uuid "fee85c4d-ae4c-46cd-b006-63429004906c")
 		)
-		(pin ""
+		(pin "12"
 			(uuid "fc65a401-c710-4835-af0e-ad71bcbb7b68")
 		)
-		(pin ""
+		(pin "24"
 			(uuid "9ef212f0-7b3d-4233-9e99-293bce2395de")
 		)
-		(pin ""
+		(pin "22"
 			(uuid "339ffb07-3544-4a63-8d24-97fffb924419")
 		)
 		(instances
 			(project ""
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "RAM1")
+					(reference "RAM_U1")
 					(unit 1)
 				)
 			)
@@ -6897,10 +6915,9 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "39424e90-1e8f-49f9-a91c-a16135917ad0")
-		(property "Reference" "R1"
-			(at 237.49 60.9599 0)
+		(property "Reference" "USB_CONN_R1"
+			(at 236.728 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6909,7 +6926,7 @@
 			)
 		)
 		(property "Value" "5.1k"
-			(at 237.49 63.4999 0)
+			(at 237.998 68.834 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6917,7 +6934,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 233.172 62.23 90)
 			(effects
 				(font
@@ -6953,7 +6970,7 @@
 		(instances
 			(project ""
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "R1")
+					(reference "USB_CONN_R1")
 					(unit 1)
 				)
 			)
@@ -7099,7 +7116,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49719c22-150a-4749-887c-7b66e42869a2")
-		(property "Reference" "DTA1"
+		(property "Reference" "DTA_U1"
 			(at 36.83 35.052 0)
 			(effects
 				(font
@@ -7207,7 +7224,7 @@
 		(instances
 			(project ""
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "DTA1")
+					(reference "DTA_U1")
 					(unit 1)
 				)
 			)
@@ -7548,7 +7565,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7199af41-5ccf-455c-9e02-cc4437fdc9f0")
-		(property "Reference" "C_AUX_0"
+		(property "Reference" "AUX_U0_C1"
 			(at 47.752 144.018 90)
 			(effects
 				(font
@@ -7564,7 +7581,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 46.99 147.6248 0)
 			(effects
 				(font
@@ -7600,7 +7617,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_AUX_0")
+					(reference "AUX_U0_C1")
 					(unit 1)
 				)
 			)
@@ -7745,8 +7762,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7ca5f8ba-5658-493d-94fd-aa4f2877a497")
-		(property "Reference" "AUX_1"
-			(at 70.866 164.846 0)
+		(property "Reference" "AUX_U1"
+			(at 79.756 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7763,7 +7780,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-20_W7.62mm"
 			(at 73.66 168.91 0)
 			(effects
 				(font
@@ -7853,7 +7870,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "AUX_1")
+					(reference "AUX_U1")
 					(unit 1)
 				)
 			)
@@ -7868,7 +7885,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7d16d430-784a-4aa9-92bd-26b441a972cd")
-		(property "Reference" "C_AUX1"
+		(property "Reference" "AUX_U1_C1"
 			(at 81.534 144.018 90)
 			(effects
 				(font
@@ -7884,7 +7901,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 81.28 147.6248 0)
 			(effects
 				(font
@@ -7920,7 +7937,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_AUX1")
+					(reference "AUX_U1_C1")
 					(unit 1)
 				)
 			)
@@ -8065,7 +8082,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "876e6524-ff68-41a6-ab01-d7bc75871df2")
-		(property "Reference" "C_DTA1"
+		(property "Reference" "DTA_U_C1"
 			(at 45.212 17.018 90)
 			(effects
 				(font
@@ -8081,7 +8098,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 45.72 20.6248 0)
 			(effects
 				(font
@@ -8117,7 +8134,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_DTA1")
+					(reference "DTA_U_C1")
 					(unit 1)
 				)
 			)
@@ -8526,7 +8543,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9cafe10e-dc85-49fe-855f-2e0cb1c50828")
-		(property "Reference" "C_ALU1"
+		(property "Reference" "ALU_C1"
 			(at 113.03 145.034 90)
 			(effects
 				(font
@@ -8542,7 +8559,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Radial_D5.0mm_H5.0mm_P2.00mm"
 			(at 116.84 150.1648 0)
 			(effects
 				(font
@@ -8578,7 +8595,7 @@
 		(instances
 			(project ""
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_ALU1")
+					(reference "ALU_C1")
 					(unit 1)
 				)
 			)
@@ -8593,7 +8610,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9f617bd3-8b8a-441b-88cb-e5db443caadd")
-		(property "Reference" "C_RAM1"
+		(property "Reference" "RAM_C1"
 			(at 113.284 165.354 90)
 			(effects
 				(font
@@ -8609,7 +8626,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Radial_D5.0mm_H5.0mm_P2.00mm"
 			(at 116.84 170.4848 0)
 			(effects
 				(font
@@ -8645,7 +8662,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_RAM1")
+					(reference "RAM_C1")
 					(unit 1)
 				)
 			)
@@ -8920,8 +8937,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b2c6c29a-43b1-465d-9590-5680bc145311")
-		(property "Reference" "ADR_0"
-			(at 142.24 38.862 0)
+		(property "Reference" "ADR0_U0"
+			(at 139.954 38.862 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8938,7 +8955,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 143.51 40.64 0)
 			(effects
 				(font
@@ -9016,7 +9033,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "ADR_0")
+					(reference "ADR0_U0")
 					(unit 1)
 				)
 			)
@@ -9031,7 +9048,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b3a8d73e-f8d3-4be5-ac56-dcc229e2ae63")
-		(property "Reference" "IC1"
+		(property "Reference" "IC_U1"
 			(at 266.954 57.658 0)
 			(effects
 				(font
@@ -9049,7 +9066,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 269.24 58.42 0)
 			(effects
 				(font
@@ -9127,7 +9144,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "IC1")
+					(reference "IC_U1")
 					(unit 1)
 				)
 			)
@@ -9142,7 +9159,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b3df1a77-c685-4b92-afdc-83d1a5b9366f")
-		(property "Reference" "C_IC1"
+		(property "Reference" "IC_U_C1"
 			(at 277.368 32.258 90)
 			(effects
 				(font
@@ -9158,7 +9175,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 276.86 35.8648 0)
 			(effects
 				(font
@@ -9194,7 +9211,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_IC1")
+					(reference "IC_U_C1")
 					(unit 1)
 				)
 			)
@@ -9284,7 +9301,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 248.412 63.754 0)
+			(at 249.936 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9536,8 +9553,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bb15a996-f7e5-4092-8c46-3534e1b251f6")
-		(property "Reference" "AUX_0"
-			(at 36.83 166.37 0)
+		(property "Reference" "AUX_U0"
+			(at 43.942 186.182 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9644,7 +9661,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "AUX_0")
+					(reference "AUX_U0")
 					(unit 1)
 				)
 			)
@@ -9985,7 +10002,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c72dd6fd-9c5d-437f-9cf6-f92a968edca3")
-		(property "Reference" "IR1"
+		(property "Reference" "IR_U1"
 			(at 98.298 105.664 0)
 			(effects
 				(font
@@ -10093,7 +10110,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "IR1")
+					(reference "IR_U1")
 					(unit 1)
 				)
 			)
@@ -10108,7 +10125,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cd46351a-6c7c-4a49-808f-324f69895f22")
-		(property "Reference" "C_ADR_1"
+		(property "Reference" "ADR0_U1_C1"
 			(at 151.13 66.802 90)
 			(effects
 				(font
@@ -10124,7 +10141,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 151.13 70.1548 0)
 			(effects
 				(font
@@ -10160,7 +10177,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_ADR_1")
+					(reference "ADR0_U1_C1")
 					(unit 1)
 				)
 			)
@@ -10370,7 +10387,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dcad6e08-18c9-428e-b52d-a5767838e988")
-		(property "Reference" "DTB1"
+		(property "Reference" "DTB_U1"
 			(at 36.83 88.9 0)
 			(effects
 				(font
@@ -10478,7 +10495,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "DTB1")
+					(reference "DTB_U1")
 					(unit 1)
 				)
 			)
@@ -10493,8 +10510,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dd982c8f-3e38-42c4-aead-2a0684e6f837")
-		(property "Reference" "ADR_1"
-			(at 140.462 92.202 0)
+		(property "Reference" "ADR0_U1"
+			(at 139.7 91.948 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10511,7 +10528,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-16_W7.62mm"
 			(at 143.51 92.71 0)
 			(effects
 				(font
@@ -10589,7 +10606,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "ADR_1")
+					(reference "ADR0_U1")
 					(unit 1)
 				)
 			)
@@ -10734,7 +10751,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f57cc8e5-21d1-440a-ba98-6368e1dc861d")
-		(property "Reference" "C_ADR_0"
+		(property "Reference" "ADR0_U0_C1"
 			(at 152.146 14.478 90)
 			(effects
 				(font
@@ -10750,7 +10767,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 151.13 18.0848 0)
 			(effects
 				(font
@@ -10786,7 +10803,7 @@
 		(instances
 			(project ""
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_ADR_0")
+					(reference "ADR0_U0_C1")
 					(unit 1)
 				)
 			)
@@ -10801,7 +10818,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f6a1635e-6d74-4233-988c-445ee5a3c529")
-		(property "Reference" "C_RAM2"
+		(property "Reference" "RAM_U_C1"
 			(at 196.088 17.018 90)
 			(effects
 				(font
@@ -10817,7 +10834,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 195.58 20.6248 0)
 			(effects
 				(font
@@ -10853,7 +10870,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_RAM2")
+					(reference "RAM_U_C1")
 					(unit 1)
 				)
 			)
@@ -10868,7 +10885,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fd49f582-29b7-44fe-8c79-37b9f65b404c")
-		(property "Reference" "C_CU1"
+		(property "Reference" "CU_C1"
 			(at 113.284 175.26 90)
 			(effects
 				(font
@@ -10884,7 +10901,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Radial_D5.0mm_H5.0mm_P2.00mm"
 			(at 116.84 180.6448 0)
 			(effects
 				(font
@@ -10920,7 +10937,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
-					(reference "C_CU1")
+					(reference "CU_C1")
 					(unit 1)
 				)
 			)
@@ -11418,7 +11435,7 @@
 	)
 	(sheet
 		(at 72.39 26.67)
-		(size 17.78 53.34)
+		(size 17.78 58.42)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -11441,7 +11458,7 @@
 			)
 		)
 		(property "Sheetfile" "alu.kicad_sch"
-			(at 70.612 82.042 0)
+			(at 71.12 89.662 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11720,7 +11737,7 @@
 			)
 		)
 		(pin "~{OE}" input
-			(at 81.28 80.01 270)
+			(at 72.39 82.55 180)
 			(uuid "3d101bbe-4681-4b84-956f-3d431a439ebb")
 			(effects
 				(font
@@ -12150,16 +12167,6 @@
 				(justify left)
 			)
 		)
-		(pin "~{WE}" input
-			(at 139.7 184.15 180)
-			(uuid "5d4f2cfb-5c8f-4769-8115-631cdc9ce475")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356"
@@ -12209,7 +12216,7 @@
 				)
 			)
 		)
-		(pin "ADRN_I" input
+		(pin "ADR12_I" input
 			(at 193.04 137.16 180)
 			(uuid "38edc921-9cc8-40bd-94c1-e1fc65ad942c")
 			(effects
@@ -12409,7 +12416,7 @@
 				(justify left)
 			)
 		)
-		(pin "~{ADR0_WE}" input
+		(pin "~{ADR1_WE}" input
 			(at 193.04 132.08 180)
 			(uuid "7eed66e1-8b8f-4ac4-8894-8f245a730dd2")
 			(effects
@@ -12419,7 +12426,7 @@
 				(justify left)
 			)
 		)
-		(pin "~{ADR1_WE}" input
+		(pin "~{ADR2_WE}" input
 			(at 193.04 134.62 180)
 			(uuid "e18ed947-3c1c-4641-8e55-a40826d798fe")
 			(effects

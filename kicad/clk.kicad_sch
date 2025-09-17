@@ -1210,6 +1210,50 @@
 		(color 0 0 0 0)
 		(uuid "b0ca2b92-7e1c-4ca8-98b7-34fe83c15c19")
 	)
+	(no_connect
+		(at 63.5 38.1)
+		(uuid "008199c9-5d31-449b-8cc8-7bbc8799a3ab")
+	)
+	(no_connect
+		(at 172.72 62.23)
+		(uuid "040b00b4-e9c7-446b-8498-57296b3f8af0")
+	)
+	(no_connect
+		(at 172.72 77.47)
+		(uuid "31f74c75-3a27-45c3-8e6e-fa758d4ec789")
+	)
+	(no_connect
+		(at 187.96 77.47)
+		(uuid "42a7a111-8f4b-4dbb-b139-faf57a867b2f")
+	)
+	(no_connect
+		(at 187.96 48.26)
+		(uuid "62765baf-af56-4d3c-9a57-ceb0cf1e34fc")
+	)
+	(no_connect
+		(at 172.72 33.02)
+		(uuid "a3b17461-5d38-417f-b98f-3c44f1e02d6c")
+	)
+	(no_connect
+		(at 172.72 48.26)
+		(uuid "b83ad7ff-1b5e-4128-a2aa-fe9cd44a8e8b")
+	)
+	(no_connect
+		(at 187.96 62.23)
+		(uuid "bbbc57c4-719f-4028-b195-bee590559b58")
+	)
+	(no_connect
+		(at 172.72 91.44)
+		(uuid "c1efa4cc-9c8f-49f6-acce-f06528b66811")
+	)
+	(no_connect
+		(at 187.96 91.44)
+		(uuid "d7e0257b-26e7-4da5-8938-93a2f51d7293")
+	)
+	(no_connect
+		(at 187.96 33.02)
+		(uuid "e3fdf1e0-8de0-49a5-a8b2-27478bcbf00c")
+	)
 	(wire
 		(pts
 			(xy 26.67 33.02) (xy 26.67 55.88)
@@ -1402,7 +1446,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "018261c1-6bd3-4e5f-a671-9a16000db612")
-		(property "Reference" "U43"
+		(property "Reference" "CLKINVERTER_U1"
 			(at 86.36 24.13 0)
 			(effects
 				(font
@@ -1418,7 +1462,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
 			(at 86.36 33.02 0)
 			(effects
 				(font
@@ -1490,7 +1534,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "U43")
+					(reference "CLKINVERTER_U1")
 					(unit 1)
 				)
 			)
@@ -1703,7 +1747,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "29dae2f9-73ce-470c-9089-3f5110258434")
-		(property "Reference" "U43"
+		(property "Reference" "CLKINVERTER_U1"
 			(at 92.71 66.0399 0)
 			(effects
 				(font
@@ -1721,7 +1765,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
 			(at 86.36 67.31 0)
 			(effects
 				(font
@@ -1793,7 +1837,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "U43")
+					(reference "CLKINVERTER_U1")
 					(unit 7)
 				)
 			)
@@ -1809,7 +1853,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "29e6ddf9-7bd4-48de-bf58-a778b4440d33")
-		(property "Reference" "U43"
+		(property "Reference" "CLKINVERTER_U1"
 			(at 180.34 24.13 0)
 			(effects
 				(font
@@ -1825,7 +1869,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
 			(at 180.34 33.02 0)
 			(effects
 				(font
@@ -1897,7 +1941,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "U43")
+					(reference "CLKINVERTER_U1")
 					(unit 2)
 				)
 			)
@@ -2044,7 +2088,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4857e44a-bdf1-4117-b3b3-f42c9a04e833")
-		(property "Reference" "U43"
+		(property "Reference" "CLKINVERTER_U1"
 			(at 180.34 39.37 0)
 			(effects
 				(font
@@ -2060,7 +2104,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
 			(at 180.34 48.26 0)
 			(effects
 				(font
@@ -2132,7 +2176,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "U43")
+					(reference "CLKINVERTER_U1")
 					(unit 3)
 				)
 			)
@@ -2147,7 +2191,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49e8d6a6-aff4-437c-862b-e21b972b3708")
-		(property "Reference" "U5"
+		(property "Reference" "CLK_U1"
 			(at 49.276 36.83 0)
 			(effects
 				(font
@@ -2219,7 +2263,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "U5")
+					(reference "CLK_U1")
 					(unit 1)
 				)
 			)
@@ -2299,8 +2343,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "65879610-5b73-42a1-96e8-85544572620e")
-		(property "Reference" "C3"
-			(at 28.194 39.624 0)
+		(property "Reference" "CLK_U_C1"
+			(at 23.114 39.116 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2317,7 +2361,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 33.9852 45.72 0)
 			(effects
 				(font
@@ -2353,7 +2397,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "C3")
+					(reference "CLK_U_C1")
 					(unit 1)
 				)
 			)
@@ -2434,7 +2478,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8aafd814-ef3d-4d2a-adf2-f8425acc1147")
-		(property "Reference" "C26"
+		(property "Reference" "CLK_U_C2"
 			(at 58.42 19.304 90)
 			(effects
 				(font
@@ -2450,7 +2494,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 58.42 24.4348 0)
 			(effects
 				(font
@@ -2486,7 +2530,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "C26")
+					(reference "CLK_U_C2")
 					(unit 1)
 				)
 			)
@@ -2568,7 +2612,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9948441d-c277-46a0-b6ce-aafb48e87a4b")
-		(property "Reference" "U43"
+		(property "Reference" "CLKINVERTER_U1"
 			(at 180.34 68.58 0)
 			(effects
 				(font
@@ -2584,7 +2628,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
 			(at 180.34 77.47 0)
 			(effects
 				(font
@@ -2656,7 +2700,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "U43")
+					(reference "CLKINVERTER_U1")
 					(unit 5)
 				)
 			)
@@ -2671,8 +2715,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a9ac8176-524c-4db1-9b6c-214d0da0e9bd")
-		(property "Reference" "C27"
-			(at 93.98 48.514 90)
+		(property "Reference" "CLKINVERTER_U_C1"
+			(at 98.044 48.514 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2687,7 +2731,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 93.98 53.6448 0)
 			(effects
 				(font
@@ -2723,7 +2767,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "C27")
+					(reference "CLKINVERTER_U_C1")
 					(unit 1)
 				)
 			)
@@ -2739,7 +2783,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aec73e55-fbbe-479c-a24e-04d2cc09e5e0")
-		(property "Reference" "U43"
+		(property "Reference" "CLKINVERTER_U1"
 			(at 180.34 53.34 0)
 			(effects
 				(font
@@ -2755,7 +2799,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
 			(at 180.34 62.23 0)
 			(effects
 				(font
@@ -2827,7 +2871,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "U43")
+					(reference "CLKINVERTER_U1")
 					(unit 4)
 				)
 			)
@@ -2843,7 +2887,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b2a69fbc-7b41-45f9-8c5b-47e0ec3ba3c0")
-		(property "Reference" "U43"
+		(property "Reference" "CLKINVERTER_U1"
 			(at 180.34 82.55 0)
 			(effects
 				(font
@@ -2859,7 +2903,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_DIP:DIP-14_W7.62mm"
 			(at 180.34 91.44 0)
 			(effects
 				(font
@@ -2931,7 +2975,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "U43")
+					(reference "CLKINVERTER_U1")
 					(unit 6)
 				)
 			)
@@ -3012,7 +3056,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ec9e982c-db9e-4a6b-b7d9-1373bd2234a5")
-		(property "Reference" "C4"
+		(property "Reference" "CLK_U_C3"
 			(at 67.31 58.4199 0)
 			(effects
 				(font
@@ -3030,7 +3074,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm"
 			(at 64.4652 63.5 0)
 			(effects
 				(font
@@ -3066,7 +3110,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "C4")
+					(reference "CLK_U_C3")
 					(unit 1)
 				)
 			)
@@ -3082,7 +3126,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fabf34fb-4c05-4113-97d5-25f950dfed17")
-		(property "Reference" "R2"
+		(property "Reference" "CLK_U_R1"
 			(at 29.21 25.3999 0)
 			(effects
 				(font
@@ -3100,7 +3144,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
 			(at 24.892 26.67 90)
 			(effects
 				(font
@@ -3136,7 +3180,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/48e73f4a-0468-4785-880e-8771bf9b7a5f"
-					(reference "R2")
+					(reference "CLK_U_R1")
 					(unit 1)
 				)
 			)
