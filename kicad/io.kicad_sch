@@ -5522,7 +5522,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ab57946a-5ab1-45bc-bb99-bea830eb8501")
-		(property "Reference" "OUT"
+		(property "Reference" "OUT1"
 			(at 104.902 65.532 0)
 			(effects
 				(font
@@ -5630,7 +5630,7 @@
 		(instances
 			(project "SC08v2"
 				(path "/8273a279-6d4f-43cc-a94b-c590a7d8a356/37fe5901-445c-47a7-bd1d-3cc6d41d9e81"
-					(reference "OUT")
+					(reference "OUT1")
 					(unit 1)
 				)
 			)
