@@ -3,16 +3,16 @@
     (input second)
     (if (> first second) (ins
         (= buffer first)
-	(= first second)
-	(= second buffer)
+        (= first second)
+        (= second buffer)
     ))
     (while (> first counter) (ins
         (+= counter 1)
-	(= buffer result0)
-	(+= result0 second)
-	(if (> buffer result0) (ins
-	    (+= result1 1)
-	))
+        (= buffer result0)
+        (+= result0 second)
+        (if (> buffer result0) (ins
+            (+= result1 1)
+        ))
     ))
     (output result0)
     (output result1)

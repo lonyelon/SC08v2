@@ -2,10 +2,10 @@
 
 The SC08v2 is a super-simple, **open-hardware 8bit computer** built for retro hardware enthusiasts,
 for which a custom default **microcode**, **ISA**, **assembler**, **programming language (based on LISP)**, **compiler** and **operating system** are included.
-The design is modular, so any of that can be replaced at any time by the user.
+The design is modular, so any of that can be replaced at any time by the user:
 
 <p align="center">
-  <img src="doc/arch.svg" width="350px"/>
+  <img src="doc/stack.svg" width="500px"/>
 </p>
 
 This repository contains various directories and files that help design, build and test both the computer's hardware and it's software. Those files and directories are the following:
