@@ -1,18 +1,25 @@
 # SC08v2: Simple Computer (8-bits, version 2)
 
-The SC08v2 is a super-simple, open-hardware 8bit computer built for retro hardware enthusiasts.
+The SC08v2 is a super-simple, **open-hardware 8bit computer** built for retro hardware enthusiasts,
+for which a custom default **microcode**, **ISA**, **assembler**, **programming language (based on LISP)**, **compiler** and **operating system** are included.
+The design is modular, so any of that can be replaced at any time by the user.
+
+<p align="center">
+  <img src="doc/arch.svg" width="350px"/>
+</p>
 
 This repository contains various directories and files that help design, build and test both the computer's hardware and it's software. Those files and directories are the following:
 
-| File/Dir | Explanation |
-| --- | --- |
-| **assembler/**            | converts assembly code to binary data. |
-| **microcode/**            | files and scripts that help with designing and building the microcode for the computer. |
-| **simulator/**            | a complete simulator to test software in. |
-| **code/**                 | software for the CPU. |
-| **code/so**               | complete OS. |
-| **doc/**                  | documentation. |
-| **kicad/**                | KiCAD hardware designs. |
+| File/Dir     | Explanation                                                                             |
+| ------------ | --------------------------------------------------------------------------------------- |
+| `assembler/` | converts assembly code to binary data.                                                  |
+| `microcode/` | files and scripts that help with designing and building the microcode for the computer. |
+| `simulator/` | a complete simulator to test software in.                                               |
+| `code/`      | software for the CPU.                                                                   |
+| `code/so`    | complete OS.                                                                            |
+| `doc/`       | documentation.                                                                          |
+| `kicad/`     | KiCAD hardware designs.                                                                 |
+| `drawio/`    | DrawIO diagrams.                                                                        |
 
 ## Developing software
 
@@ -30,14 +37,3 @@ This shows that the simulator needs machine code and can not work with assembly 
 ## Contributing
 
 Anything can be added to this repo, in whatever programming language you choose to make it, as long as it is a tool or some documentation for the SC08v2.
-
-If you want to start somewhere, check the following section :)
-
-### TODO
-
-Right now, some very important thigs are missing from this repository. Aside from completing the already made modules, like the compiler, these things would be super cool to have:
-
-- A program to automatically flash data to the CPU, both microcode and instructions.
-- A diagram of the complete computer.
-- A programmer's manual.
-- A guide to using the CPU.
