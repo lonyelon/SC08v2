@@ -1,0 +1,136 @@
+#+title: How does the compiler work
+
+The compiler adds another layer of abstraction on top of the assembler, allowing for the use of a LISP-like programming language (=sclsp=) instead of the assembly language.
+
+The compiler evaluates every expression bottom-up, meaning that, in code like:
+
+#+BEGIN_SRC lsp
+(if (> a b) (- a (+ 3 2)))
+#+END_SRC
+
+The first element to get evaluated is ~(+ 3 2)~.
+
+Different expressions have different rules.
+For example, an `if` expression like ~(if X Y)~ gets translated to:
+
+#+BEGIN_SRC asm
+        X               ;; Run X first
+        EQU.num 0x00    ;; Invert the value
+        JUM.num :endif  ;; Jump if X condition was not met (thats why the value was inverted)
+        Y               ;; Execute Y if X was met
+:endif  NOI.noa         ;; Placeholder instruction to ensure a destination point for the jump
+#+END_SRC
+
+* Common instructions
+
+#+BEGIN_SRC asm
+; (= V0 V1)
+        LDD.ram V0
+        EQU.ram V1
+
+; (= N0 N1)
+        LDD.num N0
+        EQU.num N1
+
+; (= EXPR0 V1)
+        EXPR0
+        EQU.ram V1
+
+; (= V0 EXPR0) same as (= EXPR0 V1).
+; (> * *) same as (= * *), replace EQU with GRE.
+; (<= * *) run (> * *), then
+        XOR.num 0xff
+; (>= * *)
+; (< * *)
+
+; (if N0 EXPR1)
+        LDD.num N0
+        JUM.num :ifblk
+        LDD.num 0xff
+        JUM.num :endif
+:ifblk  EXPR1
+:endif  ...
+; (if V0 EXPR1)
+        LDD.ram V0
+        JUM.num :ifblk
+        LDD.num 0xff
+        JUM.num :endif
+:ifblk  EXPR1
+:endif  ...
+; (if EXPR0 EXPR1)
+        EXPR0
+        JUM.num :ifblk
+        LDD.num 0xff
+        JUM.num :endif
+:ifblk  EXPR1
+:endif  ...
+    
+; (if N0 N1 N2)
+; (if N0 V1 N2)
+; (if N0 EXPR1 N2)
+; (if V0 N1 N2)
+; (if V0 V1 N2)
+; (if V0 EXPR1 N2)
+; (if EXPR0 N1 N2)
+; (if EXPR0 V1 N2)
+; (if EXPR0 EXPR1 N2)
+    
+; (if N0 N1 V2)
+; (if N0 V1 V2)
+; (if N0 EXPR1 V2)
+; (if V0 N1 V2)
+; (if V0 V1 V2)
+; (if V0 EXPR1 V2)
+; (if EXPR0 N1 V2)
+; (if EXPR0 V1 V2)
+; (if EXPR0 EXPR1 V2)
+    
+; (if N0 N1 EXPR2)
+; (if N0 V1 EXPR2)
+; (if N0 EXPR1 EXPR2)
+; (if V0 N1 EXPR2)
+; (if V0 V1 EXPR2)
+; (if V0 EXPR1 EXPR2)
+; (if EXPR0 N1 EXPR2)
+; (if EXPR0 V1 EXPR2)
+; (if EXPR0 EXPR1 EXPR2)
+        EXPR0
+        JUM.num :ifblk
+        EXPR2
+        LDD.num 0xff
+        JUM.num :endif
+:ifblk  EXPR1
+:endif  ...
+
+; (= V0 N1)
+        LDD.num N1
+        STD.ram V0
+; (= V0 V1)
+        LDD.ram V0
+        ADD.ram V1
+        STD.ram V0
+; (= V0 EXPR1)
+        EXPR1
+        ADD.ram V0
+        STD.ram V0
+    
+; (+ V0 N1)
+        LDD.num N1
+        ADD.ram V0
+; (+ V0 V1)
+        LDD.ram V1
+        ADD.ram V0
+; (+ V0 EXPR1)
+        EXPR1
+        ADD.ram V0
+    
+; (- V0 N1)
+        LDD.num N1
+        SUB.ram V0
+; (- V0 V1)
+        LDD.ram V1
+        SUB.ram V0
+; (- V0 EXPR1)
+        EXPR1
+        SUB.ram V0
+#+END_SRC
