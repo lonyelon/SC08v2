@@ -1,6 +1,6 @@
 #+title: SC08v2 default instruction set
 
-The SC08v2 has quite a weird set of instructions.
+The SC08v2 has quite a weird set of instructions by default.
 First, we have the [[instructions]] themselves, which tell the CPU what to do.
 [[Instruction modifiers]] tell it from where to get the data (or where to store it) after the instruction executed.
 
@@ -12,21 +12,21 @@ It means "add to whatever is on the LDA registry the number =0x60=".
 The table below explains what every instruction in the CPU does.
 Every byte value not in the list is assumed to do nothing, the same as ~NOI.noa~.
 
-|-------+--------------+-----------------------------------------------------|
-| Name  | Byte         | Value                                               |
-|-------+--------------+-----------------------------------------------------|
-| =NOI= | =00 000 mmm= |                                                     |
-| =NAN= | =00 001 mmm= | Bitwise NAND operation between =DTA= and =DTB=.     |
-| =ADD= | =00 010 mmm= | Add =DTA= and =DTB=.                                |
-| =SUB= | =00 011 mmm= | Substract =DTB= from =DTA=.                         |
-| =SHL= | =00 100 mmm= | Shift =DTA= left.                                   |
-| =SHR= | =00 101 mmm= | Shift =DTA= right.                                  |
-| =EQU= | =00 110 mmm= | Check if =DTA= = =DTB=.                             |
-| =GRE= | =00 111 mmm= | Check if =DTA= > =DTB=.                             |
-| =LDD= | =01 000 mmm= | Load data into the =DTA= registry.                  |
-| =STD= | =10 000 mmm= | Store data from the =DTA= registry.                 |
-| =JUM= | =11 000 mmm= | Conditional jumps. Only jumps if =DTA= holds =0xFF= |
-|-------+--------------+-----------------------------------------------------|
+|-------+--------------+-------------------------------------------------|
+| Name  | Byte         | Value                                           |
+|-------+--------------+-------------------------------------------------|
+| =NOI= | =00 000 mmm= |                                                 |
+| =NAN= | =00 001 mmm= | Bitwise NAND operation between =DTA= and =DTB=. |
+| =ADD= | =00 010 mmm= | Add =DTA= and =DTB=.                            |
+| =SUB= | =00 011 mmm= | Substract =DTB= from =DTA=.                     |
+| =SHL= | =00 100 mmm= | Shift =DTA= left.                               |
+| =SHR= | =00 101 mmm= | Shift =DTA= right.                              |
+| =EQU= | =00 110 mmm= | Check if =DTA= = =DTB=.                         |
+| =GRE= | =00 111 mmm= | Check if =DTA= > =DTB=.                         |
+| =LDD= | =01 000 mmm= | Load data into the =DTA= registry.              |
+| =STD= | =10 000 mmm= | Store data from the =DTA= registry.             |
+| =JUM= | =11 000 mmm= | Conditional jumps. Only jumps if ~DTA != 0xFF~. |
+|-------+--------------+-------------------------------------------------|
 
 As we can see, every instruction has two bits for the ID, three for the ALU operation (has to be =000= in non-ALU instructions to allow reading from =DTA=), and three for the modifier.
 
@@ -82,3 +82,7 @@ As we can see, every instruction has two bits for the ID, three for the ALU oper
 | ~JUM.ptr #1 #2~ | NOI.noa? PC = RAM[#1] RAM[#2]                                                  |
 | ~JUM.ios #1~    | NOI.noa? PC = INP #1                                                           |
 |-----------------+--------------------------------------------------------------------------------|
+
+* Full microcode
+
+The full microcode with explanations on what it does can be found under [[../microcode]].

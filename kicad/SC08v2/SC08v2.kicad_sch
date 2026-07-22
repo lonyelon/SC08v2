@@ -7473,7 +7473,7 @@
 		(dnp no)
 		(uuid "49719c22-150a-4749-887c-7b66e42869a2")
 		(property "Reference" "DTA_U1"
-			(at 36.83 35.052 0)
+			(at 35.052 36.322 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11284,7 +11284,7 @@
 		(dnp no)
 		(uuid "dcad6e08-18c9-428e-b52d-a5767838e988")
 		(property "Reference" "DTB_U1"
-			(at 36.83 88.9 0)
+			(at 35.306 90.678 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

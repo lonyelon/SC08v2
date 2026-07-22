@@ -1,263 +1,188 @@
-;;                                                                           NOI
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; This is the microcode definition file.
+;
+; The file is formatted like this:
+;   INS BYTE STEP FLAGS
+; Where INS is the name of the instruction (including the modifier), BYTE is the
+; instruction code, STEP is the IC microstep and FLAGS are the CPU control flags
+; that get powered on in that CPU cycle.
+;
+; All lines starting with ";" get ignored.
 
-;;NAN.noa	;; Add RAM[ADR] to DTA
-NOI.noa	0	ALU E,DTA S,PRC I
-NOI.noa	1	ROM E,INS S
+; Default values for the rom. Other instruction write over this. I keep them
+; simple: just jump to the next instruction (NOI.noa).
+* *  0 
+* *  1 PRC:I
+* *  2 ROM:E,INS:S
+* *  3 PRC:I
+* *  4 ROM:E,INS:S
+* *  5 PRC:I
+* *  6 ROM:E,INS:S
+* *  7 PRC:I
+* *  8 ROM:E,INS:S
+* *  9 PRC:I
+* * 10 ROM:E,INS:S
+* * 11 PRC:I
+* * 12 ROM:E,INS:S
+* * 13 PRC:I
+* * 14 ROM:E,INS:S
+* * 15
 
-;;NAN.num	;; Add ROM to DTA
-NOI.num	0	ROM E,AUX S
-NOI.num	1	ALU E,DTA S,PRC I
-NOI.num	2	ROM E,INS S
+;; DTA += RAM[ADR]
+ADD.noa 0x00_010_000 1 ALU:E,DTA:S,PRC:I
+ADD.noa 0x00_010_000 2 ROM:E,INS:S
 
-;;NAN.ram	;; Add RAM[#1] to DTA
-NOI.ram	0	ROM E,ADR S
-NOI.ram	1	RAM E,AUX S
-NOI.ram	2	ALU E,DTA S,PRC I
-NOI.ram	3	ROM E,INS S
+;; DTA += #1
+ADD.num 0x00_010_000 1 PRC:I
+ADD.num 0x00_010_000 2 ROM:E,DTB:S
+ADD.num 0x00_010_000 3 ALU:E,DTA:S,PRC:I
+ADD.num 0x00_010_000 4 ROM:E,INS:S
 
-;;NAN.rom	;; ERROR: Too many steps
+;; DTA += RAM[#1]
+ADD.ram 0x00_010_000 1 PRC:I
+ADD.ram 0x00_010_000 2 ROM:E,DRA:S
+ADD.ram 0x00_010_000 3 RAM:E,DTB:S,PRC:I
+ADD.ram 0x00_010_000 4 ALU:E,DTA:S
+ADD.ram 0x00_010_000 5 ROM:E,INS:S
 
-;;NAN.ptr	;; Add RAM[RAM[DTA]] to DTA
-NOI.ptr	0	RAM E,ADR S
-NOI.ptr	1	RAM E,AUX S
-NOI.ptr	2	ALU E,DTA S,PRC I
-NOI.ptr	3	ROM E,PRC S
+;; DTA += ROM[#1][#2]
+ADD.rom 0x00_010_000 1 PRC:I              ; Increase program counter.
+ADD.rom 0x00_010_000 2 ROM:E,PGE:S        ; Get a byte from ROM and store it in
+                                          ;   the page registry.
+ADD.rom 0x00_010_000 3 PRC:I              ; Increase program counter again.
+ADD.rom 0x00_010_000 4 ROM:E,DRB:S        ; Get another byte, store it in the ROM
+                                          ;   address registry.
+ADD.rom 0x00_010_000 5 SWT:T,PRC:I        ; Switch ROM to random access mode.
+                                          ;   Increase program counter.
+ADD.rom 0x00_010_000 6 ROM:E,DTB:S        ; While in random access mode, get a
+                                          ;   byte and store it in the ALU's
+                                          ;   secondary registry.
+ADD.rom 0x00_010_000 7 SWT:T,ALU:E,DTA:S  ; [SW]i[T]ch back to normal mode.
+                                          ;   Operate in the ALU and store back
+                                          ;   to the ALU accumulator registry.
+ADD.rom 0x00_010_000 8 ROM:E,INS:S        ; Go to next instruction.
 
-;;NAN.prr	;; Add RAM[RAM[#1]] to DTA
-NOI.prr	0	ROM E,ADR S
-NOI.prr	1	RAM E,ADR S
-NOI.prr	2	RAM E,AUX S
-NOI.prr	3	ALU E,DTA S,PRC I
-NOI.prr	4	ROM E,PRC S
+;; DTA += RAM[RAM[#1]]
+ADD.ptr 0x00_010_000 1 PRC:I
+ADD.ptr 0x00_010_000 2 ROM:E,DRA:S 
+ADD.ptr 0x00_010_000 3 RAM:E,DRA:S,PRC:I
+ADD.ptr 0x00_010_000 4 RAM:E,DTB:S
+ADD.ptr 0x00_010_000 5 ALU:E,DTA:S
+ADD.ptr 0x00_010_000 6 ROM:E,INS:S
 
-;;NAN.inp	;; Add INP to DTA
-NOI.inp	0	ALU E,DTA S,PRC I
-NOI.inp	1	ROM E,PRC S
+;; DTA += RAM[RAM[DTA]]
+ADD.prr 0x00_010_000 1 DTA:E,DRA:S,PRC:I
+ADD.prr 0x00_010_000 2 RAM:E,DRA:S
+ADD.prr 0x00_010_000 3 RAM:E,DTB:S
+ADD.prr 0x00_010_000 4 ALU:E,DTA:S
+ADD.prr 0x00_010_000 5 ROM:E,INS:S
 
-;;NAN.out	;; ERROR: Input from output
+;; DTA += INP
+ADD.ios 0x00_010_000 1 INP:E,DTB:S,PRC:I
+ADD.ios 0x00_010_000 2 ALU:E,DTA:S
+ADD.ios 0x00_010_000 3 ROM:E,INS:S
 
-;;                                                                           JUM
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DTA += RAM[ADR]
+ADD.noa 0x00_010_000 1 ALU:E,DTA:S,PRC:I
+ADD.noa 0x00_010_000 2 ROM:E,INS:S
 
-;;JUM.noa	;; Jump to ROM[AUX][RAM[ADR]]
-JUM.noa	0	PRC S
-JUM.noa	1	ROM E,INS S
+;; DTA += #1
+ADD.num 0x00_010_000 1 PRC:I
+ADD.num 0x00_010_000 2 ROM:E,DTB:S
+ADD.num 0x00_010_000 3 ALU:E,DTA:S,PRC:I
+ADD.num 0x00_010_000 4 ROM:E,INS:S
 
-;;JUM.num	;; Jump to ROM[#1][#2]
-JUM.num	0	ROM E,AUX S
-JUM.num	1	PRC I
-JUM.num	2	ROM E,ADR S
-JUM.num	3	PRC I
-JUM.num	4	PRC S
-JUM.num	5	ROM E,ADR S
+;; DTA += RAM[#1]
+ADD.ram 0x00_010_000 1 PRC:I
+ADD.ram 0x00_010_000 2 ROM:E,DRA:S
+ADD.ram 0x00_010_000 3 RAM:E,DTB:S,PRC:I
+ADD.ram 0x00_010_000 4 ALU:E,DTA:S
+ADD.ram 0x00_010_000 5 ROM:E,INS:S
 
-;;JUM.ram	;; Jump to ROM[AUX][RAM[#1]]; Same as JUM.prr
-JUM.ram	0	ROM E,ADR S
-JUM.ram	1	RAM E,ADR S,PRC I
-JUM.ram	2	PRC S
-JUM.ram	3	ROM E,INS S
+;; DTA += ROM[#1][#2]
+ADD.rom 0x00_010_000 1 PRC:I
+ADD.rom 0x00_010_000 2 ROM:E,PGE:S
+ADD.rom 0x00_010_000 3 PRC:I
+ADD.rom 0x00_010_000 4 ROM:E,DRB:S
+ADD.rom 0x00_010_000 5 SWT:T,PRC:I
+ADD.rom 0x00_010_000 6 ROM:E,DTB:S
+ADD.rom 0x00_010_000 7 SWT:T,ALU:E,DTA:S
+ADD.rom 0x00_010_000 8 ROM:E,INS:S
 
-;;JUM.rom	;; INVALID: 5 byte operation
+;; DTA += RAM[RAM[#1]]
+ADD.ptr 0x00_010_000 1 PRC:I
+ADD.ptr 0x00_010_000 2 ROM:E,DRA:S 
+ADD.ptr 0x00_010_000 3 RAM:E,DRA:S,PRC:I
+ADD.ptr 0x00_010_000 4 RAM:E,DTB:S
+ADD.ptr 0x00_010_000 5 ALU:E,DTA:S
 
-;;JUM.ptr	;; Jump to ROM[AUX][RAM[DTA]]
-JUM.ptr	0	RAM E,ADR S,PRC I
-JUM.ptr	1	PRC S
-JUM.ptr	2	ROM E,INS S
+;; DTA += RAM[RAM[DTA]]
+ADD.prr 0x00_010_000 1 DTA:E,DRA:S,PRC:I
+ADD.prr 0x00_010_000 2 RAM:E,DRA:S
+ADD.prr 0x00_010_000 3 RAM:E,DTB:S
+ADD.prr 0x00_010_000 4 ALU:E,DTA:S
+ADD.prr 0x00_010_000 5 ROM:E,INS:S
 
-;;JUM.prr	;; Jump to ROM[AUX][RAM[#1]]; Same as JUM.ram
-JUM.prr	0	ROM E,ADR S
-JUM.prr	1	RAM E,ADR S,PRC I
-JUM.prr	2	PRC S
-JUM.prr	3	ROM E,INS S
+;; DTA += INP
+ADD.ios 0x00_010_000 1 INP:E,DTB:S,PRC:I
+ADD.ios 0x00_010_000 2 ALU:E,DTA:S
+ADD.ios 0x00_010_000 3 ROM:E,INS:S
 
-;;JUM.inp	;; Jumps to ROM[AUX][INP]
-JUM.inp	0	PRC S
-JUM.inp	1	ROM E,INS S
+SUB.noa 0x00_011_000
+SUB.num 0x00_011_000
+SUB.ram 0x00_011_000
+SUB.ptr 0x00_011_000
+SUB.prr 0x00_011_000
+SUB.inp 0x00_011_000
 
-;;JUM.out	;; INVALID: Cannot read from out registry
+SHL.noa 0x00_100_000
+SHL.num 0x00_100_000
+SHL.ram 0x00_100_000
+SHL.ptr 0x00_100_000
+SHL.prr 0x00_100_000
+SHL.inp 0x00_100_000
 
-;;                                                                           LDD
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+SHR.noa 0x00_101_000
+SHR.num 0x00_101_000
+SHR.ram 0x00_101_000
+SHR.ptr 0x00_101_000
+SHR.prr 0x00_101_000
+SHR.inp 0x00_101_000
 
-;;LDD.noa	;; DTA = RAM[ADR]
-LDD.noa	0	ROM E,INS S
+EQU.noa 0x00_110_000
+EQU.num 0x00_110_000
+EQU.ram 0x00_110_000
+EQU.ptr 0x00_110_000
+EQU.prr 0x00_110_000
+EQU.inp 0x00_110_000
 
-;;LDD.num	;; DTA = ROM[#1][#2]
-LDD.num	0	ROM E,DTA S,PRC I
-LDD.num	1	ROM E,INS S
+GRE.noa 0x00_111_000
+GRE.num 0x00_111_000
+GRE.ram 0x00_111_000
+GRE.ptr 0x00_111_000
+GRE.prr 0x00_111_000
+GRE.inp 0x00_111_000
 
-;;LDD.ram	;; DTA = RAM[#1]
-LDD.ram	0	ROM E,ADR S
-LDD.ram	1	RAM E,DTA S,PRC I
-LDD.ram	2	ROM E,INS S
+LDD.noa 0x00_000_000
+LDD.num 0x00_000_000
+LDD.ram 0x00_000_000
+LDD.rom 0x00_000_000
+LDD.ptr 0x00_000_000
+LDD.prr 0x00_000_000
+LDD.inp 0x00_000_000
 
-;;LDD.rom	;; DTA = ROM[#1][#2]
-LDD.rom	0	ROM E,AUX S
-LDD.rom	1	PRC I
-LDD.rom	2	ROM E,ADR S
-LDD.rom	3	SWT
-LDD.rom	4	ROM E,DTA S,PRC I
-LDD.rom	5	SWT
-LDD.rom	6	ROM E,INS S
+STD.noa 0x00_000_000
+STD.ram 0x00_000_000
+STD.rom 0x00_000_000
+STD.ptr 0x00_000_000
+STD.prr 0x00_000_000
+STD.out 0x00_000_000
 
-;;LDD.ptr	;; DTA = RAM[DTA]
-LDD.ptr	0	RAM E,DTA S,PRC I
-LDD.ptr	1	ROM E,INS S
-
-;;LDD.prr	;; DTA = RAM[#1]
-LDD.prr	0	ROM E,ADR S
-LDD.prr	1	RAM E,ADR S
-LDD.prr	2	RAM E,DTA S,PRC I
-LDD.prr	3	ROM E,INS S
-
-;;LDD.inp	;; DTA = INP
-LDD.inp	0	ROM E,INS S
-
-;;LDD.out	;; INVALID: Cannot read from out registry
-
-;;                                                                           STD
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;STD.noa	;; RAM[ADR] = DTA
-STD.noa	0	ROM E,INS S
-
-;;STD.num	;; INVALID: Cannot store to a number
-
-;;STD.ram	;; RAM[#1] = DTA
-STD.ram	0	ROM E,ADR S
-STD.ram	1	ALU E,RAM S,PRC I
-STD.ram	2	ROM E,INS S
-
-;;STD.rom	;; ROM[#1][#2] = DTA
-STD.rom	0	ROM E,AUX S
-STD.rom	1	PRC I
-STD.rom	2	ROM E,ADR S
-STD.rom	3	SWT
-STD.rom	4	ALU E,ROM S
-STD.rom	5	PRC I,SWT
-STD.rom	6	ROM E,INS S
-
-;;STD.ptr	;; Store DTA to RAM[DTA]
-STD.ptr	0	ALU E,RAM S,PRC I
-STD.ptr	1	ROM E,INS S
-
-;;STD.prr	;; Store DTA to RAM[#1]
-STD.prr	0	ROM E,ADR S
-STD.prr	1	RAM E,ADR S
-STD.prr	2	ALU E,RAM S,PRC I
-STD.prr	3	ROM E,INS S
-
-;;STD.inp	;; INVALID: Cannot write to the inp registry
-
-;;STD.out	;; OUT = DTA
-STD.out	0	ROM E,INS S
-
-;;                                                                           LDA
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;LDA.noa	;; AUX = RAM[ADR]
-LDA.noa	0	ROM E,INS S
-
-;;LDA.num	;; AUX = ROM[#1][#2]
-LDA.num	0	ROM E,AUX S,PRC I
-LDA.num	1	ROM E,INS S
-
-;;LDA.ram	;; AUX = RAM[#1]
-LDA.ram	0	ROM E,ADR S
-LDA.ram	1	RAM E,AUX S,PRC I
-LDA.ram	2	ROM E,INS S
-
-;;LDA.rom	;; AUX = ROM[#1][#2]
-LDA.rom	0	ROM E,AUX S
-LDA.rom	1	PRC I
-LDA.rom	2	ROM E,ADR S
-LDA.rom	3	SWT
-LDA.rom	4	ROM E,AUX S,PRC I
-LDA.rom	5	SWT
-LDA.rom	6	ROM E,INS S
-
-;;LDA.ptr	;; Get data from RAM[AUX] to DTA ??
-LDA.ptr	0	RAM E,AUX S,PRC I
-LDA.ptr	1	ROM E,INS S
-
-;;LDA.prr	;; AUX = RAM[#1]
-LDA.prr	0	ROM E,ADR S
-LDA.prr	1	RAM E,ADR S
-LDA.prr	2	RAM E,AUX S,PRC I
-LDA.prr	3	ROM E,INS S
-
-;;LDA.inp	;; AUX = INP
-LDA.inp	0	ROM E,INS S
-
-;;LDA.out	;; ERROR: Cannot read from out registry
-
-;;                                                                           STA
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;STA.noa	;; RAM[ADR] = AUX
-STA.noa	0	ROM E,INS S
-
-;;STA.num	;; INVALID: Cannot store to a number
-
-;;STA.rom	;; ROM[#1][#2] = AUX
-STA.rom	0	ROM E,AUX S
-STA.rom	1	PRC I
-STA.rom	2	ROM E,ADR S
-STA.rom	3	SWT
-STA.rom	4	ALU E,ROM S
-STA.rom	5	PRC I,SWT
-STA.rom	6	ROM E,INS S
-
-;;STA.ptr	;; RAM[DTA] = AUX
-STA.ptr	0	ALU E,RAM S,PRC I
-STA.ptr	1	ROM E,INS S
-
-;;STA.prr	;; INVALID: Chicken-egg situation
-
-;;STA.inp	;; INVALID: Cannot store data to inp registry
-
-;;STA.out	;; OUT = AUX
-STA.out	0	ROM E,INS S
-
-;;                                                                           ADD
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;ADD.noa	;; DTA += RAM[ADR]
-ADD.noa	0	ALU E,DTA S,PRC I
-ADD.noa	1	ROM E,INS S
-
-;;ADD.num	;; DTA += #1
-ADD.num	0	ROM E,AUX S
-ADD.num	1	ALU E,DTA S,PRC I
-ADD.num	2	ROM E,INS S
-
-;;ADD.ram	;; DTA += RAM[#1]
-ADD.ram	0	ROM E,ADR S
-ADD.ram	1	RAM E,AUX S
-ADD.ram	2	ALU E,DTA S,PRC I
-ADD.ram	3	ROM E,INS S
-
-;;ADD.rom	;; INVALID: Too many microinstructions
-
-;;ADD.ptr	;; DTA += RAM[RAM[DTA]]
-ADD.ptr	0	RAM E,ADR S
-ADD.ptr	1	RAM E,AUX S
-ADD.ptr	2	ALU E,DTA S,PRC I
-ADD.ptr	3	ROM E,PRC S
-
-;;ADD.prr	;; Add RAM[RAM[#1]] to DTA
-ADD.prr	0	ROM E,ADR S
-ADD.prr	1	RAM E,ADR S
-ADD.prr	2	RAM E,AUX S
-ADD.prr	3	ALU E,DTA S,PRC I
-ADD.prr	4	ROM E,PRC S
-
-;;ADD.inp	;; Add INP to DTA
-ADD.inp	0	ALU E,DTA S,PRC I
-ADD.inp	1	ROM E,PRC S
-
-;;ADD.out	;; ERROR: Input from output
+JUM.noa 0x00_000_000
+JUM.num 0x00_000_000
+JUM.ram 0x00_000_000
+JUM.ptr 0x00_000_000
+JUM.prr 0x00_000_000
+JUM.inp 0x00_000_000
 
 ;;                                                                           SUB
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -453,3 +378,119 @@ GRE.inp	0	ALU E,DTA S,PRC I
 GRE.inp	1	ROM E,PRC S
 
 ;;GRE.out	;; INVALID: Cannot read form OUT registry
+
+;;                                                                           LDD
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;LDD.noa	;; DTA = RAM[ADR]
+LDD.noa	0	ROM E,INS S
+
+;;LDD.num	;; DTA = ROM[#1][#2]
+LDD.num	0	ROM E,DTA S,PRC I
+LDD.num	1	ROM E,INS S
+
+;;LDD.ram	;; DTA = RAM[#1]
+LDD.ram	0	ROM E,ADR S
+LDD.ram	1	RAM E,DTA S,PRC I
+LDD.ram	2	ROM E,INS S
+
+;;LDD.rom	;; DTA = ROM[#1][#2]
+LDD.rom	0	ROM E,AUX S
+LDD.rom	1	PRC I
+LDD.rom	2	ROM E,ADR S
+LDD.rom	3	SWT
+LDD.rom	4	ROM E,DTA S,PRC I
+LDD.rom	5	SWT
+LDD.rom	6	ROM E,INS S
+
+;;LDD.ptr	;; DTA = RAM[DTA]
+LDD.ptr	0	RAM E,DTA S,PRC I
+LDD.ptr	1	ROM E,INS S
+
+;;LDD.prr	;; DTA = RAM[#1]
+LDD.prr	0	ROM E,ADR S
+LDD.prr	1	RAM E,ADR S
+LDD.prr	2	RAM E,DTA S,PRC I
+LDD.prr	3	ROM E,INS S
+
+;;LDD.inp	;; DTA = INP
+LDD.inp	0	ROM E,INS S
+
+;;LDD.out	;; INVALID: Cannot read from out registry
+
+;;                                                                           STD
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;STD.noa	;; RAM[ADR] = DTA
+STD.noa	0	ROM E,INS S
+
+;;STD.num	;; INVALID: Cannot store to a number
+
+;;STD.ram	;; RAM[#1] = DTA
+STD.ram	0	ROM E,ADR S
+STD.ram	1	ALU E,RAM S,PRC I
+STD.ram	2	ROM E,INS S
+
+;;STD.rom	;; ROM[#1][#2] = DTA
+STD.rom	0	ROM E,AUX S
+STD.rom	1	PRC I
+STD.rom	2	ROM E,ADR S
+STD.rom	3	SWT
+STD.rom	4	ALU E,ROM S
+STD.rom	5	PRC I,SWT
+STD.rom	6	ROM E,INS S
+
+;;STD.ptr	;; Store DTA to RAM[DTA]
+STD.ptr	0	ALU E,RAM S,PRC I
+STD.ptr	1	ROM E,INS S
+
+;;STD.prr	;; Store DTA to RAM[#1]
+STD.prr	0	ROM E,ADR S
+STD.prr	1	RAM E,ADR S
+STD.prr	2	ALU E,RAM S,PRC I
+STD.prr	3	ROM E,INS S
+
+;;STD.inp	;; INVALID: Cannot write to the inp registry
+
+;;STD.out	;; OUT = DTA
+STD.out	0	ROM E,INS S
+
+;;                                                                           JUM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;JUM.noa	;; Jump to ROM[AUX][RAM[ADR]]
+JUM.noa	0	PRC S
+JUM.noa	1	ROM E,INS S
+
+;;JUM.num	;; Jump to ROM[#1][#2]
+JUM.num	0	ROM E,AUX S
+JUM.num	1	PRC I
+JUM.num	2	ROM E,ADR S
+JUM.num	3	PRC I
+JUM.num	4	PRC S
+JUM.num	5	ROM E,ADR S
+
+;;JUM.ram	;; Jump to ROM[AUX][RAM[#1]]; Same as JUM.prr
+JUM.ram	0	ROM E,ADR S
+JUM.ram	1	RAM E,ADR S,PRC I
+JUM.ram	2	PRC S
+JUM.ram	3	ROM E,INS S
+
+;;JUM.rom	;; INVALID: 5 byte operation
+
+;;JUM.ptr	;; Jump to ROM[AUX][RAM[DTA]]
+JUM.ptr	0	RAM E,ADR S,PRC I
+JUM.ptr	1	PRC S
+JUM.ptr	2	ROM E,INS S
+
+;;JUM.prr	;; Jump to ROM[AUX][RAM[#1]]; Same as JUM.ram
+JUM.prr	0	ROM E,ADR S
+JUM.prr	1	RAM E,ADR S,PRC I
+JUM.prr	2	PRC S
+JUM.prr	3	ROM E,INS S
+
+;;JUM.inp	;; Jumps to ROM[AUX][INP]
+JUM.inp	0	PRC S
+JUM.inp	1	ROM E,INS S
+
+;;JUM.out	;; INVALID: Cannot read from out registry
